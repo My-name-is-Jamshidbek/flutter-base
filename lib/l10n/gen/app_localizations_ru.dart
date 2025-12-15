@@ -438,4 +438,180 @@ class AppLocalizationsRu extends AppLocalizations {
   String networkRetrying(int attempt, int maxAttempts) {
     return 'Повторная попытка... ($attempt/$maxAttempts)';
   }
+
+  @override
+  String get skip => 'Пропустить';
+
+  @override
+  String get next => 'Далее';
+
+  @override
+  String get back => 'Назад';
+
+  @override
+  String get getStarted => 'Начать';
+
+  @override
+  String get loginTitle => 'С возвращением';
+
+  @override
+  String get loginSubtitle => 'Войдите, чтобы продолжить';
+
+  @override
+  String get registerTitle => 'Создать аккаунт';
+
+  @override
+  String get registerSubtitle => 'Зарегистрируйтесь, чтобы начать';
+
+  @override
+  String get email => 'Электронная почта';
+
+  @override
+  String get password => 'Пароль';
+
+  @override
+  String get name => 'Имя';
+
+  @override
+  String get confirmPassword => 'Подтвердите пароль';
+
+  @override
+  String get login => 'Войти';
+
+  @override
+  String get register => 'Зарегистрироваться';
+
+  @override
+  String get forgotPassword => 'Забыли пароль?';
+
+  @override
+  String get noAccount => 'Нет аккаунта?';
+
+  @override
+  String get alreadyHaveAccount => 'Уже есть аккаунт?';
+
+  @override
+  String get emailRequired => 'Введите электронную почту';
+
+  @override
+  String get emailInvalid => 'Введите корректный адрес электронной почты';
+
+  @override
+  String get passwordRequired => 'Введите пароль';
+
+  @override
+  String get passwordTooShort => 'Пароль должен содержать минимум 6 символов';
+
+  @override
+  String get nameRequired => 'Введите имя';
+
+  @override
+  String get confirmPasswordRequired => 'Подтвердите пароль';
+
+  @override
+  String get passwordsDoNotMatch => 'Пароли не совпадают';
+
+  @override
+  String get forgotPasswordTitle => 'Сброс пароля';
+
+  @override
+  String get forgotPasswordSubtitle =>
+      'Введите вашу почту, и мы отправим ссылку для сброса';
+
+  @override
+  String get sendResetLink => 'Отправить ссылку';
+
+  @override
+  String get backToLogin => 'Вернуться к входу';
+
+  @override
+  String get viewOnboarding => 'Посмотреть введение';
+
+  @override
+  String get checkYourEmail => 'Проверьте почту';
+
+  @override
+  String resetLinkSent(String email) {
+    return 'Мы отправили ссылку для сброса пароля на $email';
+  }
+
+  @override
+  String get didNotReceiveEmail => 'Не получили письмо?';
+
+  @override
+  String get profileTitle => 'Профиль';
+
+  @override
+  String get editProfile => 'Редактировать профиль';
+
+  @override
+  String get anonymous => 'Аноним';
+
+  @override
+  String get followers => 'Подписчики';
+
+  @override
+  String get following => 'Подписки';
+
+  @override
+  String get posts => 'Публикации';
+
+  @override
+  String get logout => 'Выйти';
+
+  @override
+  String get logoutConfirmTitle => 'Выйти?';
+
+  @override
+  String get logoutConfirmMessage => 'Вы уверены, что хотите выйти?';
+
+  @override
+  String get accountSettings => 'Настройки аккаунта';
+
+  @override
+  String get privacy => 'Конфиденциальность';
+
+  @override
+  String get errorScreenTitle => 'Ошибка';
+
+  @override
+  String get pageNotFound => 'Страница не найдена';
+
+  @override
+  String pageNotFoundMessage(String location) {
+    return 'Страница по адресу \"$location\" не найдена.';
+  }
+
+  @override
+  String get goHome => 'На главную';
+
+  @override
+  String userDetailTitle(int userId) {
+    return 'Пользователь #$userId';
+  }
+
+  @override
+  String get userDetail => 'Информация о пользователе';
+
+  @override
+  String viewingUserWithId(int userId) {
+    return 'Просмотр пользователя с ID: $userId';
+  }
+
+  @override
+  String itemDetailTitle(int itemId) {
+    return 'Элемент #$itemId';
+  }
+
+  @override
+  String get itemDetail => 'Информация об элементе';
+
+  @override
+  String viewingItemWithId(int itemId) {
+    return 'Просмотр элемента с ID: $itemId';
+  }
+
+  @override
+  String get typedRouteParamsDemo =>
+      'Это демонстрация типизированных параметров маршрута.';
 }

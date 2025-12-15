@@ -679,5 +679,316 @@
         "example": "3"
       }
     }
+  },
+
+  "skip": "Skip",
+  "@skip": {
+    "description": "Skip button text"
+  },
+
+  "next": "Next",
+  "@next": {
+    "description": "Next button text"
+  },
+
+  "back": "Back",
+  "@back": {
+    "description": "Back button text"
+  },
+
+  "getStarted": "Get Started",
+  "@getStarted": {
+    "description": "Get started button text"
+  },
+
+  "loginTitle": "Welcome Back",
+  "@loginTitle": {
+    "description": "Login screen title"
+  },
+
+  "loginSubtitle": "Sign in to continue",
+  "@loginSubtitle": {
+    "description": "Login screen subtitle"
+  },
+
+  "registerTitle": "Create Account",
+  "@registerTitle": {
+    "description": "Register screen title"
+  },
+
+  "registerSubtitle": "Sign up to get started",
+  "@registerSubtitle": {
+    "description": "Register screen subtitle"
+  },
+
+  "email": "Email",
+  "@email": {
+    "description": "Email field label"
+  },
+
+  "password": "Password",
+  "@password": {
+    "description": "Password field label"
+  },
+
+  "name": "Name",
+  "@name": {
+    "description": "Name field label"
+  },
+
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Confirm password field label"
+  },
+
+  "login": "Sign In",
+  "@login": {
+    "description": "Login button text"
+  },
+
+  "register": "Sign Up",
+  "@register": {
+    "description": "Register button text"
+  },
+
+  "forgotPassword": "Forgot Password?",
+  "@forgotPassword": {
+    "description": "Forgot password link text"
+  },
+
+  "noAccount": "Don't have an account?",
+  "@noAccount": {
+    "description": "No account text"
+  },
+
+  "alreadyHaveAccount": "Already have an account?",
+  "@alreadyHaveAccount": {
+    "description": "Already have account text"
+  },
+
+  "emailRequired": "Email is required",
+  "@emailRequired": {
+    "description": "Email required validation message"
+  },
+
+  "emailInvalid": "Please enter a valid email",
+  "@emailInvalid": {
+    "description": "Email invalid validation message"
+  },
+
+  "passwordRequired": "Password is required",
+  "@passwordRequired": {
+    "description": "Password required validation message"
+  },
+
+  "passwordTooShort": "Password must be at least 6 characters",
+  "@passwordTooShort": {
+    "description": "Password too short validation message"
+  },
+
+  "nameRequired": "Name is required",
+  "@nameRequired": {
+    "description": "Name required validation message"
+  },
+
+  "confirmPasswordRequired": "Please confirm your password",
+  "@confirmPasswordRequired": {
+    "description": "Confirm password required validation message"
+  },
+
+  "passwordsDoNotMatch": "Passwords do not match",
+  "@passwordsDoNotMatch": {
+    "description": "Passwords do not match validation message"
+  },
+
+  "forgotPasswordTitle": "Reset Password",
+  "@forgotPasswordTitle": {
+    "description": "Forgot password screen title"
+  },
+
+  "forgotPasswordSubtitle": "Enter your email and we'll send you a reset link",
+  "@forgotPasswordSubtitle": {
+    "description": "Forgot password screen subtitle"
+  },
+
+  "sendResetLink": "Send Reset Link",
+  "@sendResetLink": {
+    "description": "Send reset link button text"
+  },
+
+  "backToLogin": "Back to Login",
+  "@backToLogin": {
+    "description": "Back to login link text"
+  },
+
+  "viewOnboarding": "View Onboarding",
+  "@viewOnboarding": {
+    "description": "Link to view onboarding screens again"
+  },
+
+  "checkYourEmail": "Check Your Email",
+  "@checkYourEmail": {
+    "description": "Check your email title"
+  },
+
+  "resetLinkSent": "We've sent a password reset link to {email}",
+  "@resetLinkSent": {
+    "description": "Reset link sent message",
+    "placeholders": {
+      "email": {
+        "type": "String",
+        "example": "user@example.com"
+      }
+    }
+  },
+
+  "didNotReceiveEmail": "Didn't receive the email?",
+  "@didNotReceiveEmail": {
+    "description": "Did not receive email text"
+  },
+
+  "profileTitle": "Profile",
+  "@profileTitle": {
+    "description": "Profile screen title"
+  },
+
+  "editProfile": "Edit Profile",
+  "@editProfile": {
+    "description": "Edit profile button tooltip"
+  },
+
+  "anonymous": "Anonymous",
+  "@anonymous": {
+    "description": "Anonymous user name"
+  },
+
+  "followers": "Followers",
+  "@followers": {
+    "description": "Followers label"
+  },
+
+  "following": "Following",
+  "@following": {
+    "description": "Following label"
+  },
+
+  "posts": "Posts",
+  "@posts": {
+    "description": "Posts label"
+  },
+
+  "logout": "Log Out",
+  "@logout": {
+    "description": "Logout button text"
+  },
+
+  "logoutConfirmTitle": "Log Out?",
+  "@logoutConfirmTitle": {
+    "description": "Logout confirmation title"
+  },
+
+  "logoutConfirmMessage": "Are you sure you want to log out?",
+  "@logoutConfirmMessage": {
+    "description": "Logout confirmation message"
+  },
+
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+
+  "accountSettings": "Account Settings",
+  "@accountSettings": {
+    "description": "Account settings screen title"
+  },
+
+  "privacy": "Privacy",
+  "@privacy": {
+    "description": "Privacy settings title"
+  },
+
+  "errorScreenTitle": "Error",
+  "@errorScreenTitle": {
+    "description": "Error screen title"
+  },
+
+  "pageNotFound": "Page Not Found",
+  "@pageNotFound": {
+    "description": "404 page not found title"
+  },
+
+  "pageNotFoundMessage": "The page at \"{location}\" could not be found.",
+  "@pageNotFoundMessage": {
+    "description": "404 page not found message with location",
+    "placeholders": {
+      "location": {
+        "type": "String",
+        "example": "/unknown-page"
+      }
+    }
+  },
+
+  "goHome": "Go Home",
+  "@goHome": {
+    "description": "Go home button text"
+  },
+
+  "userDetailTitle": "User #{userId}",
+  "@userDetailTitle": {
+    "description": "User detail screen title",
+    "placeholders": {
+      "userId": {
+        "type": "int",
+        "example": "123"
+      }
+    }
+  },
+
+  "userDetail": "User Detail",
+  "@userDetail": {
+    "description": "User detail heading"
+  },
+
+  "viewingUserWithId": "Viewing user with ID: {userId}",
+  "@viewingUserWithId": {
+    "description": "User detail description",
+    "placeholders": {
+      "userId": {
+        "type": "int",
+        "example": "123"
+      }
+    }
+  },
+
+  "itemDetailTitle": "Item #{itemId}",
+  "@itemDetailTitle": {
+    "description": "Item detail screen title",
+    "placeholders": {
+      "itemId": {
+        "type": "int",
+        "example": "456"
+      }
+    }
+  },
+
+  "itemDetail": "Item Detail",
+  "@itemDetail": {
+    "description": "Item detail heading"
+  },
+
+  "viewingItemWithId": "Viewing item with ID: {itemId}",
+  "@viewingItemWithId": {
+    "description": "Item detail description",
+    "placeholders": {
+      "itemId": {
+        "type": "int",
+        "example": "456"
+      }
+    }
+  },
+
+  "typedRouteParamsDemo": "This demonstrates typed route parameters.",
+  "@typedRouteParamsDemo": {
+    "description": "Typed route parameters demonstration text"
   }
 }

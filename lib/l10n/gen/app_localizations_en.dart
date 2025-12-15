@@ -431,4 +431,180 @@ class AppLocalizationsEn extends AppLocalizations {
   String networkRetrying(int attempt, int maxAttempts) {
     return 'Retrying... ($attempt/$maxAttempts)';
   }
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get back => 'Back';
+
+  @override
+  String get getStarted => 'Get Started';
+
+  @override
+  String get loginTitle => 'Welcome Back';
+
+  @override
+  String get loginSubtitle => 'Sign in to continue';
+
+  @override
+  String get registerTitle => 'Create Account';
+
+  @override
+  String get registerSubtitle => 'Sign up to get started';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get confirmPassword => 'Confirm Password';
+
+  @override
+  String get login => 'Sign In';
+
+  @override
+  String get register => 'Sign Up';
+
+  @override
+  String get forgotPassword => 'Forgot Password?';
+
+  @override
+  String get noAccount => 'Don\'t have an account?';
+
+  @override
+  String get alreadyHaveAccount => 'Already have an account?';
+
+  @override
+  String get emailRequired => 'Email is required';
+
+  @override
+  String get emailInvalid => 'Please enter a valid email';
+
+  @override
+  String get passwordRequired => 'Password is required';
+
+  @override
+  String get passwordTooShort => 'Password must be at least 6 characters';
+
+  @override
+  String get nameRequired => 'Name is required';
+
+  @override
+  String get confirmPasswordRequired => 'Please confirm your password';
+
+  @override
+  String get passwordsDoNotMatch => 'Passwords do not match';
+
+  @override
+  String get forgotPasswordTitle => 'Reset Password';
+
+  @override
+  String get forgotPasswordSubtitle =>
+      'Enter your email and we\'ll send you a reset link';
+
+  @override
+  String get sendResetLink => 'Send Reset Link';
+
+  @override
+  String get backToLogin => 'Back to Login';
+
+  @override
+  String get viewOnboarding => 'View Onboarding';
+
+  @override
+  String get checkYourEmail => 'Check Your Email';
+
+  @override
+  String resetLinkSent(String email) {
+    return 'We\'ve sent a password reset link to $email';
+  }
+
+  @override
+  String get didNotReceiveEmail => 'Didn\'t receive the email?';
+
+  @override
+  String get profileTitle => 'Profile';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get anonymous => 'Anonymous';
+
+  @override
+  String get followers => 'Followers';
+
+  @override
+  String get following => 'Following';
+
+  @override
+  String get posts => 'Posts';
+
+  @override
+  String get logout => 'Log Out';
+
+  @override
+  String get logoutConfirmTitle => 'Log Out?';
+
+  @override
+  String get logoutConfirmMessage => 'Are you sure you want to log out?';
+
+  @override
+  String get accountSettings => 'Account Settings';
+
+  @override
+  String get privacy => 'Privacy';
+
+  @override
+  String get errorScreenTitle => 'Error';
+
+  @override
+  String get pageNotFound => 'Page Not Found';
+
+  @override
+  String pageNotFoundMessage(String location) {
+    return 'The page at \"$location\" could not be found.';
+  }
+
+  @override
+  String get goHome => 'Go Home';
+
+  @override
+  String userDetailTitle(int userId) {
+    return 'User #$userId';
+  }
+
+  @override
+  String get userDetail => 'User Detail';
+
+  @override
+  String viewingUserWithId(int userId) {
+    return 'Viewing user with ID: $userId';
+  }
+
+  @override
+  String itemDetailTitle(int itemId) {
+    return 'Item #$itemId';
+  }
+
+  @override
+  String get itemDetail => 'Item Detail';
+
+  @override
+  String viewingItemWithId(int itemId) {
+    return 'Viewing item with ID: $itemId';
+  }
+
+  @override
+  String get typedRouteParamsDemo =>
+      'This demonstrates typed route parameters.';
 }

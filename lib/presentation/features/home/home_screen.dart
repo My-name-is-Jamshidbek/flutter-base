@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:app_template/l10n/gen/app_localizations.dart';
-import 'package:app_template/presentation/router/app_router.dart';
+import 'package:app_template/presentation/router/routes.dart';
 import 'package:app_template/presentation/theme/theme.dart';
 import 'package:app_template/presentation/widgets/widgets.dart';
 
@@ -28,7 +27,7 @@ class HomeScreen extends ConsumerWidget {
           IconButton(
             icon: const AppIcon(Icons.settings_outlined),
             tooltip: l10n.settingsTitle,
-            onPressed: () => context.push(Routes.settings),
+            onPressed: () => context.pushSettings(),
           ),
           AppSpacing.horizontalGapSm,
         ],
@@ -182,7 +181,7 @@ class _QuickActionsSection extends StatelessWidget {
                 icon: Icons.palette_outlined,
                 label: l10n.themeMode,
                 color: colorScheme.tertiary,
-                onTap: () => context.push(Routes.settings),
+                onTap: () => context.pushSettings(),
               ),
             ),
             AppSpacing.horizontalGapMd,
@@ -191,7 +190,7 @@ class _QuickActionsSection extends StatelessWidget {
                 icon: Icons.language,
                 label: l10n.language,
                 color: colorScheme.secondary,
-                onTap: () => context.push(Routes.settings),
+                onTap: () => context.pushSettings(),
               ),
             ),
           ],

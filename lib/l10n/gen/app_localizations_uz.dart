@@ -431,4 +431,181 @@ class AppLocalizationsUz extends AppLocalizations {
   String networkRetrying(int attempt, int maxAttempts) {
     return 'Qayta urinish... ($attempt/$maxAttempts)';
   }
+
+  @override
+  String get skip => 'O\'tkazib yuborish';
+
+  @override
+  String get next => 'Keyingi';
+
+  @override
+  String get back => 'Orqaga';
+
+  @override
+  String get getStarted => 'Boshlash';
+
+  @override
+  String get loginTitle => 'Xush kelibsiz';
+
+  @override
+  String get loginSubtitle => 'Davom etish uchun kiring';
+
+  @override
+  String get registerTitle => 'Hisob yaratish';
+
+  @override
+  String get registerSubtitle => 'Boshlash uchun ro\'yxatdan o\'ting';
+
+  @override
+  String get email => 'Elektron pochta';
+
+  @override
+  String get password => 'Parol';
+
+  @override
+  String get name => 'Ism';
+
+  @override
+  String get confirmPassword => 'Parolni tasdiqlang';
+
+  @override
+  String get login => 'Kirish';
+
+  @override
+  String get register => 'Ro\'yxatdan o\'tish';
+
+  @override
+  String get forgotPassword => 'Parolni unutdingizmi?';
+
+  @override
+  String get noAccount => 'Hisobingiz yo\'qmi?';
+
+  @override
+  String get alreadyHaveAccount => 'Hisobingiz bormi?';
+
+  @override
+  String get emailRequired => 'Elektron pochta talab qilinadi';
+
+  @override
+  String get emailInvalid => 'To\'g\'ri elektron pochta kiriting';
+
+  @override
+  String get passwordRequired => 'Parol talab qilinadi';
+
+  @override
+  String get passwordTooShort =>
+      'Parol kamida 6 ta belgidan iborat bo\'lishi kerak';
+
+  @override
+  String get nameRequired => 'Ism talab qilinadi';
+
+  @override
+  String get confirmPasswordRequired => 'Parolni tasdiqlang';
+
+  @override
+  String get passwordsDoNotMatch => 'Parollar mos kelmaydi';
+
+  @override
+  String get forgotPasswordTitle => 'Parolni tiklash';
+
+  @override
+  String get forgotPasswordSubtitle =>
+      'Elektron pochtangizni kiriting, biz tiklash havolasini yuboramiz';
+
+  @override
+  String get sendResetLink => 'Tiklash havolasini yuborish';
+
+  @override
+  String get backToLogin => 'Kirishga qaytish';
+
+  @override
+  String get viewOnboarding => 'Tanishuvni ko\'rish';
+
+  @override
+  String get checkYourEmail => 'Elektron pochtangizni tekshiring';
+
+  @override
+  String resetLinkSent(String email) {
+    return 'Parolni tiklash havolasi $email manziliga yuborildi';
+  }
+
+  @override
+  String get didNotReceiveEmail => 'Xat kelmadimi?';
+
+  @override
+  String get profileTitle => 'Profil';
+
+  @override
+  String get editProfile => 'Profilni tahrirlash';
+
+  @override
+  String get anonymous => 'Anonim';
+
+  @override
+  String get followers => 'Obunachilar';
+
+  @override
+  String get following => 'Obunalar';
+
+  @override
+  String get posts => 'Postlar';
+
+  @override
+  String get logout => 'Chiqish';
+
+  @override
+  String get logoutConfirmTitle => 'Chiqishni xohlaysizmi?';
+
+  @override
+  String get logoutConfirmMessage => 'Haqiqatan ham chiqmoqchimisiz?';
+
+  @override
+  String get accountSettings => 'Hisob sozlamalari';
+
+  @override
+  String get privacy => 'Maxfiylik';
+
+  @override
+  String get errorScreenTitle => 'Xato';
+
+  @override
+  String get pageNotFound => 'Sahifa topilmadi';
+
+  @override
+  String pageNotFoundMessage(String location) {
+    return '\"$location\" manzilida sahifa topilmadi.';
+  }
+
+  @override
+  String get goHome => 'Bosh sahifaga';
+
+  @override
+  String userDetailTitle(int userId) {
+    return 'Foydalanuvchi #$userId';
+  }
+
+  @override
+  String get userDetail => 'Foydalanuvchi ma\'lumotlari';
+
+  @override
+  String viewingUserWithId(int userId) {
+    return 'ID: $userId foydalanuvchi ko\'rilmoqda';
+  }
+
+  @override
+  String itemDetailTitle(int itemId) {
+    return 'Element #$itemId';
+  }
+
+  @override
+  String get itemDetail => 'Element ma\'lumotlari';
+
+  @override
+  String viewingItemWithId(int itemId) {
+    return 'ID: $itemId element ko\'rilmoqda';
+  }
+
+  @override
+  String get typedRouteParamsDemo =>
+      'Bu tiplashtilgan marshut parametrlari namoyishidir.';
 }

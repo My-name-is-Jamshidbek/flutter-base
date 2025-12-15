@@ -825,6 +825,330 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Retrying... ({attempt}/{maxAttempts})'**
   String networkRetrying(int attempt, int maxAttempts);
+
+  /// Skip button text
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// Next button text
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// Back button text
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get back;
+
+  /// Get started button text
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started'**
+  String get getStarted;
+
+  /// Login screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome Back'**
+  String get loginTitle;
+
+  /// Login screen subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to continue'**
+  String get loginSubtitle;
+
+  /// Register screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Create Account'**
+  String get registerTitle;
+
+  /// Register screen subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up to get started'**
+  String get registerSubtitle;
+
+  /// Email field label
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// Password field label
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// Name field label
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// Confirm password field label
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirmPassword;
+
+  /// Login button text
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get login;
+
+  /// Register button text
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Up'**
+  String get register;
+
+  /// Forgot password link text
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot Password?'**
+  String get forgotPassword;
+
+  /// No account text
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
+  String get noAccount;
+
+  /// Already have account text
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get alreadyHaveAccount;
+
+  /// Email required validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Email is required'**
+  String get emailRequired;
+
+  /// Email invalid validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid email'**
+  String get emailInvalid;
+
+  /// Password required validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Password is required'**
+  String get passwordRequired;
+
+  /// Password too short validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 6 characters'**
+  String get passwordTooShort;
+
+  /// Name required validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Name is required'**
+  String get nameRequired;
+
+  /// Confirm password required validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Please confirm your password'**
+  String get confirmPasswordRequired;
+
+  /// Passwords do not match validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get passwordsDoNotMatch;
+
+  /// Forgot password screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Password'**
+  String get forgotPasswordTitle;
+
+  /// Forgot password screen subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email and we\'ll send you a reset link'**
+  String get forgotPasswordSubtitle;
+
+  /// Send reset link button text
+  ///
+  /// In en, this message translates to:
+  /// **'Send Reset Link'**
+  String get sendResetLink;
+
+  /// Back to login link text
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Login'**
+  String get backToLogin;
+
+  /// Link to view onboarding screens again
+  ///
+  /// In en, this message translates to:
+  /// **'View Onboarding'**
+  String get viewOnboarding;
+
+  /// Check your email title
+  ///
+  /// In en, this message translates to:
+  /// **'Check Your Email'**
+  String get checkYourEmail;
+
+  /// Reset link sent message
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ve sent a password reset link to {email}'**
+  String resetLinkSent(String email);
+
+  /// Did not receive email text
+  ///
+  /// In en, this message translates to:
+  /// **'Didn\'t receive the email?'**
+  String get didNotReceiveEmail;
+
+  /// Profile screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profileTitle;
+
+  /// Edit profile button tooltip
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
+
+  /// Anonymous user name
+  ///
+  /// In en, this message translates to:
+  /// **'Anonymous'**
+  String get anonymous;
+
+  /// Followers label
+  ///
+  /// In en, this message translates to:
+  /// **'Followers'**
+  String get followers;
+
+  /// Following label
+  ///
+  /// In en, this message translates to:
+  /// **'Following'**
+  String get following;
+
+  /// Posts label
+  ///
+  /// In en, this message translates to:
+  /// **'Posts'**
+  String get posts;
+
+  /// Logout button text
+  ///
+  /// In en, this message translates to:
+  /// **'Log Out'**
+  String get logout;
+
+  /// Logout confirmation title
+  ///
+  /// In en, this message translates to:
+  /// **'Log Out?'**
+  String get logoutConfirmTitle;
+
+  /// Logout confirmation message
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to log out?'**
+  String get logoutConfirmMessage;
+
+  /// Account settings screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Account Settings'**
+  String get accountSettings;
+
+  /// Privacy settings title
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy'**
+  String get privacy;
+
+  /// Error screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Error'**
+  String get errorScreenTitle;
+
+  /// 404 page not found title
+  ///
+  /// In en, this message translates to:
+  /// **'Page Not Found'**
+  String get pageNotFound;
+
+  /// 404 page not found message with location
+  ///
+  /// In en, this message translates to:
+  /// **'The page at \"{location}\" could not be found.'**
+  String pageNotFoundMessage(String location);
+
+  /// Go home button text
+  ///
+  /// In en, this message translates to:
+  /// **'Go Home'**
+  String get goHome;
+
+  /// User detail screen title
+  ///
+  /// In en, this message translates to:
+  /// **'User #{userId}'**
+  String userDetailTitle(int userId);
+
+  /// User detail heading
+  ///
+  /// In en, this message translates to:
+  /// **'User Detail'**
+  String get userDetail;
+
+  /// User detail description
+  ///
+  /// In en, this message translates to:
+  /// **'Viewing user with ID: {userId}'**
+  String viewingUserWithId(int userId);
+
+  /// Item detail screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Item #{itemId}'**
+  String itemDetailTitle(int itemId);
+
+  /// Item detail heading
+  ///
+  /// In en, this message translates to:
+  /// **'Item Detail'**
+  String get itemDetail;
+
+  /// Item detail description
+  ///
+  /// In en, this message translates to:
+  /// **'Viewing item with ID: {itemId}'**
+  String viewingItemWithId(int itemId);
+
+  /// Typed route parameters demonstration text
+  ///
+  /// In en, this message translates to:
+  /// **'This demonstrates typed route parameters.'**
+  String get typedRouteParamsDemo;
 }
 
 class _AppLocalizationsDelegate

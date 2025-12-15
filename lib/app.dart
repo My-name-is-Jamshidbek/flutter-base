@@ -11,13 +11,14 @@ import 'package:app_template/presentation/theme/app_theme.dart';
 /// This widget sets up:
 /// - Material 3 theming (light and dark)
 /// - Localization (with AppLocalizations)
-/// - Navigation (with GoRouter)
+/// - Navigation (with GoRouter and route guards)
 class App extends ConsumerWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final settings = ref.watch(appSettingsProvider);
+    final router = ref.watch(appRouterProvider);
 
     return MaterialApp.router(
       title: 'App Template',
@@ -41,7 +42,7 @@ class App extends ConsumerWidget {
       supportedLocales: AppLocalizations.supportedLocales,
 
       // Router
-      routerConfig: appRouter,
+      routerConfig: router,
     );
   }
 }

@@ -413,3 +413,232 @@ class _SurfaceIconBadge extends AppIconBadge {
     );
   }
 }
+
+// ============================================
+// ICON CONTAINER SIZES
+// ============================================
+
+/// Icon container size variants.
+enum AppIconContainerSize {
+  /// Small container (32dp)
+  small,
+
+  /// Medium container (40dp)
+  medium,
+
+  /// Large container (56dp)
+  large,
+
+  /// Extra large container (80dp)
+  xl,
+}
+
+/// A flexible icon container with customizable background.
+class AppIconContainer extends StatelessWidget {
+  /// The icon to display.
+  final IconData icon;
+
+  /// The container size.
+  final AppIconContainerSize size;
+
+  /// The icon color.
+  final Color? color;
+
+  /// The background color.
+  final Color? backgroundColor;
+
+  /// The container shape.
+  final BoxShape shape;
+
+  /// Border radius (only used when shape is rectangle).
+  final BorderRadius? borderRadius;
+
+  const AppIconContainer({
+    super.key,
+    required this.icon,
+    this.size = AppIconContainerSize.medium,
+    this.color,
+    this.backgroundColor,
+    this.shape = BoxShape.circle,
+    this.borderRadius,
+  });
+
+  static const Map<AppIconContainerSize, double> _containerSizes = {
+    AppIconContainerSize.small: 32,
+    AppIconContainerSize.medium: 40,
+    AppIconContainerSize.large: 56,
+    AppIconContainerSize.xl: 80,
+  };
+
+  static const Map<AppIconContainerSize, double> _iconSizes = {
+    AppIconContainerSize.small: AppIconSizes.sm,
+    AppIconContainerSize.medium: AppIconSizes.md,
+    AppIconContainerSize.large: AppIconSizes.xl,
+    AppIconContainerSize.xl: AppIconSizes.massive,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final containerSize = _containerSizes[size]!;
+    final iconSize = _iconSizes[size]!;
+
+    return Container(
+      width: containerSize,
+      height: containerSize,
+      decoration: BoxDecoration(
+        color: backgroundColor ?? colorScheme.surfaceContainerHighest,
+        shape: shape,
+        borderRadius: shape == BoxShape.rectangle ? borderRadius : null,
+      ),
+      alignment: Alignment.center,
+      child: Icon(
+        icon,
+        size: iconSize,
+        color: color ?? colorScheme.onSurfaceVariant,
+      ),
+    );
+  }
+}
+
+// ============================================
+// AVATAR SIZES
+// ============================================
+
+/// Avatar size variants.
+enum AppAvatarSize {
+  /// Extra small avatar (24dp)
+  xs,
+
+  /// Small avatar (32dp)
+  small,
+
+  /// Medium avatar (40dp)
+  medium,
+
+  /// Large avatar (56dp)
+  large,
+
+  /// Extra large avatar (80dp)
+  xl,
+
+  /// Extra extra large avatar (120dp)
+  xxl,
+}
+
+/// A flexible avatar widget with image, initials, or placeholder.
+class AppAvatar extends StatelessWidget {
+  /// The avatar name (used for initials).
+  final String? name;
+
+  /// The image URL.
+  final String? imageUrl;
+
+  /// The avatar size.
+  final AppAvatarSize size;
+
+  /// Custom background color.
+  final Color? backgroundColor;
+
+  /// Custom foreground color.
+  final Color? foregroundColor;
+
+  /// Custom placeholder icon.
+  final IconData? placeholderIcon;
+
+  const AppAvatar({
+    super.key,
+    this.name,
+    this.imageUrl,
+    this.size = AppAvatarSize.medium,
+    this.backgroundColor,
+    this.foregroundColor,
+    this.placeholderIcon,
+  });
+
+  static const Map<AppAvatarSize, double> _sizes = {
+    AppAvatarSize.xs: 24,
+    AppAvatarSize.small: 32,
+    AppAvatarSize.medium: 40,
+    AppAvatarSize.large: 56,
+    AppAvatarSize.xl: 80,
+    AppAvatarSize.xxl: 120,
+  };
+
+  static const Map<AppAvatarSize, double> _fontSizes = {
+    AppAvatarSize.xs: 10,
+    AppAvatarSize.small: 12,
+    AppAvatarSize.medium: 14,
+    AppAvatarSize.large: 20,
+    AppAvatarSize.xl: 28,
+    AppAvatarSize.xxl: 40,
+  };
+
+  static const Map<AppAvatarSize, double> _iconSizes = {
+    AppAvatarSize.xs: 14,
+    AppAvatarSize.small: 18,
+    AppAvatarSize.medium: 22,
+    AppAvatarSize.large: 30,
+    AppAvatarSize.xl: 44,
+    AppAvatarSize.xxl: 64,
+  };
+
+  String _getInitials() {
+    if (name == null || name!.isEmpty) return '';
+
+    final parts = name!.trim().split(RegExp(r'\s+'));
+    if (parts.isEmpty) return '';
+
+    if (parts.length == 1) {
+      return parts[0].substring(0, parts[0].length.clamp(0, 2)).toUpperCase();
+    }
+
+    return '${parts[0][0]}${parts[parts.length - 1][0]}'.toUpperCase();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final avatarSize = _sizes[size]!;
+    final fontSize = _fontSizes[size]!;
+    final iconSize = _iconSizes[size]!;
+
+    final bgColor = backgroundColor ?? colorScheme.primaryContainer;
+    final fgColor = foregroundColor ?? colorScheme.onPrimaryContainer;
+
+    if (imageUrl != null && imageUrl!.isNotEmpty) {
+      return CircleAvatar(
+        radius: avatarSize / 2,
+        backgroundColor: bgColor,
+        backgroundImage: NetworkImage(imageUrl!),
+        onBackgroundImageError: (_, __) {},
+      );
+    }
+
+    final initials = _getInitials();
+    if (initials.isNotEmpty) {
+      return CircleAvatar(
+        radius: avatarSize / 2,
+        backgroundColor: bgColor,
+        child: Text(
+          initials,
+          style: TextStyle(
+            color: fgColor,
+            fontSize: fontSize,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      );
+    }
+
+    return CircleAvatar(
+      radius: avatarSize / 2,
+      backgroundColor: bgColor,
+      child: Icon(
+        placeholderIcon ?? Icons.person,
+        size: iconSize,
+        color: fgColor,
+      ),
+    );
+  }
+}
