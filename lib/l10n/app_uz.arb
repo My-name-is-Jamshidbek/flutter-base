@@ -1,0 +1,21 @@
+{
+  "@@locale": "uz",
+  "appTitle": "Ilova Shabloni",
+  "homeTitle": "Bosh sahifa",
+  "settingsTitle": "Sozlamalar",
+  "welcomeMessage": "Ilova Shabloniga xush kelibsiz!",
+  "counterLabel": "Siz tugmani shuncha marta bosdingiz:",
+  "appearanceSection": "Ko'rinish",
+  "darkMode": "Qorong'u rejim",
+  "darkModeSubtitle": "Qorong'u mavzudan foydalanish",
+  "language": "Til",
+  "selectLanguage": "Tilni tanlang",
+  "aboutSection": "Haqida",
+  "version": "Versiya",
+  "licenses": "Litsenziyalar",
+  "themeMode": "Mavzu rejimi",
+  "themeModeSystem": "Tizim",
+  "themeModeLight": "Yorug'",
+  "themeModeDark": "Qorong'u",
+  "cancel": "Bekor qilish"
+}

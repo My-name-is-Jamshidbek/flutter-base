@@ -15,5 +15,50 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeTitle => 'Home';
 
   @override
-  String get helloWorld => 'Hello World';
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get welcomeMessage => 'Welcome to App Template!';
+
+  @override
+  String get counterLabel => 'You have pushed the button this many times:';
+
+  @override
+  String get appearanceSection => 'Appearance';
+
+  @override
+  String get darkMode => 'Dark Mode';
+
+  @override
+  String get darkModeSubtitle => 'Use dark theme';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get selectLanguage => 'Select Language';
+
+  @override
+  String get aboutSection => 'About';
+
+  @override
+  String get version => 'Version';
+
+  @override
+  String get licenses => 'Licenses';
+
+  @override
+  String get themeMode => 'Theme Mode';
+
+  @override
+  String get themeModeSystem => 'System';
+
+  @override
+  String get themeModeLight => 'Light';
+
+  @override
+  String get themeModeDark => 'Dark';
+
+  @override
+  String get cancel => 'Cancel';
 }

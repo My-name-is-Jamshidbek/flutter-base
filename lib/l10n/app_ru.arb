@@ -1,0 +1,21 @@
+{
+  "@@locale": "ru",
+  "appTitle": "Шаблон приложения",
+  "homeTitle": "Главная",
+  "settingsTitle": "Настройки",
+  "welcomeMessage": "Добро пожаловать в шаблон приложения!",
+  "counterLabel": "Вы нажали кнопку столько раз:",
+  "appearanceSection": "Внешний вид",
+  "darkMode": "Тёмный режим",
+  "darkModeSubtitle": "Использовать тёмную тему",
+  "language": "Язык",
+  "selectLanguage": "Выберите язык",
+  "aboutSection": "О приложении",
+  "version": "Версия",
+  "licenses": "Лицензии",
+  "themeMode": "Режим темы",
+  "themeModeSystem": "Системный",
+  "themeModeLight": "Светлый",
+  "themeModeDark": "Тёмный",
+  "cancel": "Отмена"
+}

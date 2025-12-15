@@ -1,0 +1,75 @@
+{
+  "@@locale": "en",
+  "appTitle": "App Template",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "homeTitle": "Home",
+  "@homeTitle": {
+    "description": "Title for the home screen"
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "Title for the settings screen"
+  },
+  "welcomeMessage": "Welcome to App Template!",
+  "@welcomeMessage": {
+    "description": "Welcome message shown on home screen"
+  },
+  "counterLabel": "You have pushed the button this many times:",
+  "@counterLabel": {
+    "description": "Label for counter display"
+  },
+  "appearanceSection": "Appearance",
+  "@appearanceSection": {
+    "description": "Appearance section title"
+  },
+  "darkMode": "Dark Mode",
+  "@darkMode": {
+    "description": "Dark mode setting title"
+  },
+  "darkModeSubtitle": "Use dark theme",
+  "@darkModeSubtitle": {
+    "description": "Dark mode setting subtitle"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Language setting title"
+  },
+  "selectLanguage": "Select Language",
+  "@selectLanguage": {
+    "description": "Select language dialog title"
+  },
+  "aboutSection": "About",
+  "@aboutSection": {
+    "description": "About section title"
+  },
+  "version": "Version",
+  "@version": {
+    "description": "Version label"
+  },
+  "licenses": "Licenses",
+  "@licenses": {
+    "description": "Licenses label"
+  },
+  "themeMode": "Theme Mode",
+  "@themeMode": {
+    "description": "Theme mode setting title"
+  },
+  "themeModeSystem": "System",
+  "@themeModeSystem": {
+    "description": "System theme mode"
+  },
+  "themeModeLight": "Light",
+  "@themeModeLight": {
+    "description": "Light theme mode"
+  },
+  "themeModeDark": "Dark",
+  "@themeModeDark": {
+    "description": "Dark theme mode"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button text"
+  }
+}
