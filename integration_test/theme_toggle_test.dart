@@ -124,8 +124,14 @@ void main() {
         'onboarding_completed': true,
         'theme_mode': 'light',
       });
+      final prefs = await SharedPreferences.getInstance();
 
-      await tester.pumpWidget(const app.AppTemplate());
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [sharedPreferencesProvider.overrideWithValue(prefs)],
+          child: const App(),
+        ),
+      );
       await tester.pumpAndSettle(const Duration(seconds: 2));
 
       // Verify light mode colors
