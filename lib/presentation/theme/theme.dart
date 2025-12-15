@@ -14,3 +14,11 @@ export 'elevation.dart';
 
 // Component themes
 export 'components.dart';
+
+// UI Foundations
+export 'foundations/typography_utils.dart';
+export 'foundations/buttons.dart';
+export 'foundations/inputs.dart';
+export 'foundations/surfaces.dart';
+export 'foundations/icons.dart';
+export 'foundations/motion.dart';

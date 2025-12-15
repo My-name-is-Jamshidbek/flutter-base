@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:app_template/presentation/theme/spacing.dart';
+import 'package:app_template/presentation/theme/theme.dart';
 
 /// An empty state display widget.
 ///
 /// Displays a centered message with an icon and optional action button.
-/// Uses semantic spacing from design tokens.
+/// Uses foundations: AppIcon, AppIconSizes, AppSpacing, AppFilledButton, AppTextButton.
 class EmptyState extends StatelessWidget {
   /// The message to display.
   final String message;
@@ -21,9 +21,6 @@ class EmptyState extends StatelessWidget {
   /// The icon to display.
   final IconData icon;
 
-  /// The size of the icon.
-  final double iconSize;
-
   /// Optional secondary action label.
   final String? secondaryActionLabel;
 
@@ -37,7 +34,6 @@ class EmptyState extends StatelessWidget {
     this.actionLabel,
     this.onAction,
     this.icon = Icons.inbox_outlined,
-    this.iconSize = 80,
     this.secondaryActionLabel,
     this.onSecondaryAction,
   });
@@ -57,18 +53,7 @@ class EmptyState extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               // Icon container with subtle background
-              Container(
-                padding: const EdgeInsets.all(AppSpacing.xl),
-                decoration: BoxDecoration(
-                  color: colorScheme.surfaceContainerHighest,
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  icon,
-                  size: iconSize,
-                  color: colorScheme.onSurfaceVariant,
-                ),
-              ),
+              AppIconBadge.surface(icon: icon, size: AppIconSizes.xmassive),
 
               AppSpacing.verticalGapXl,
 
@@ -96,16 +81,21 @@ class EmptyState extends StatelessWidget {
               // Primary action button
               if (actionLabel != null && onAction != null) ...[
                 AppSpacing.verticalGapXl,
-                FilledButton(onPressed: onAction, child: Text(actionLabel!)),
+                AppFilledButton(
+                  label: actionLabel!,
+                  onPressed: onAction,
+                  size: AppButtonSize.medium,
+                ),
               ],
 
               // Secondary action button
               if (secondaryActionLabel != null &&
                   onSecondaryAction != null) ...[
                 AppSpacing.verticalGapSm,
-                TextButton(
+                AppTextButton(
+                  label: secondaryActionLabel!,
                   onPressed: onSecondaryAction,
-                  child: Text(secondaryActionLabel!),
+                  size: AppButtonSize.medium,
                 ),
               ],
             ],
@@ -147,7 +137,7 @@ class CompactEmptyState extends StatelessWidget {
       padding: const EdgeInsets.all(AppSpacing.lg),
       child: Row(
         children: [
-          Icon(icon, size: 32, color: colorScheme.onSurfaceVariant),
+          AppIcon.muted(icon, size: AppIconSizes.xl),
           AppSpacing.horizontalGapMd,
           Expanded(
             child: Text(
@@ -158,7 +148,11 @@ class CompactEmptyState extends StatelessWidget {
             ),
           ),
           if (actionLabel != null && onAction != null)
-            TextButton(onPressed: onAction, child: Text(actionLabel!)),
+            AppTextButton(
+              label: actionLabel!,
+              onPressed: onAction,
+              size: AppButtonSize.small,
+            ),
         ],
       ),
     );

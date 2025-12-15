@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:app_template/core/config/app_settings.dart';
 import 'package:app_template/l10n/gen/app_localizations.dart';
-import 'package:app_template/presentation/theme/spacing.dart';
-import 'package:app_template/presentation/theme/radii.dart';
+import 'package:app_template/presentation/theme/theme.dart';
 
 /// Language option data class.
 class LanguageOption {
@@ -53,7 +52,7 @@ const supportedLanguages = [
 ///
 /// Displays current language and allows switching between
 /// supported languages.
-/// Uses semantic spacing and design tokens.
+/// Uses foundations: AppCard, AppIcon, AppIconSizes, AppSpacing, AppDivider.
 class LocalizationManagerCard extends ConsumerWidget {
   const LocalizationManagerCard({super.key});
 
@@ -61,15 +60,15 @@ class LocalizationManagerCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final settings = ref.watch(appSettingsProvider);
     final settingsNotifier = ref.read(appSettingsProvider.notifier);
 
-    return Card(
+    return AppCard(
       margin: const EdgeInsets.symmetric(
         horizontal: AppSpacing.lg,
         vertical: AppSpacing.sm,
       ),
+      padding: EdgeInsets.zero,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -83,17 +82,9 @@ class LocalizationManagerCard extends ConsumerWidget {
             ),
             child: Row(
               children: [
-                Container(
-                  padding: const EdgeInsets.all(AppSpacing.sm),
-                  decoration: BoxDecoration(
-                    color: colorScheme.primaryContainer,
-                    borderRadius: AppRadii.borderRadiusSm,
-                  ),
-                  child: Icon(
-                    Icons.language,
-                    color: colorScheme.onPrimaryContainer,
-                    size: 20,
-                  ),
+                AppIconBadge.primary(
+                  icon: Icons.language,
+                  size: AppIconSizes.md,
                 ),
                 AppSpacing.horizontalGapMd,
                 Text(
@@ -106,13 +97,13 @@ class LocalizationManagerCard extends ConsumerWidget {
             ),
           ),
 
-          const Divider(height: 1),
+          const AppDivider(),
 
           // System option
           _LanguageOption(
             flag: '🌐',
-            title: 'System',
-            subtitle: 'Use device language',
+            title: l10n.systemLanguage,
+            subtitle: l10n.useDeviceLanguage,
             isSelected: settings.locale == null,
             onTap: () => settingsNotifier.setLocale(null),
           ),
@@ -152,43 +143,39 @@ class _LanguageOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-
-    return ListTile(
-      contentPadding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.lg,
-        vertical: AppSpacing.xxs,
-      ),
-      leading: Container(
-        width: 40,
-        height: 40,
-        decoration: BoxDecoration(
-          color: isSelected
-              ? colorScheme.primaryContainer
-              : colorScheme.surfaceContainerHighest,
-          borderRadius: AppRadii.borderRadiusSm,
-        ),
-        alignment: Alignment.center,
-        child: Text(flag, style: const TextStyle(fontSize: 20)),
-      ),
-      title: Text(
-        title,
-        style: theme.textTheme.bodyLarge?.copyWith(
-          color: isSelected ? colorScheme.primary : colorScheme.onSurface,
-          fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
-        ),
-      ),
-      subtitle: Text(
-        subtitle,
-        style: theme.textTheme.bodySmall?.copyWith(
-          color: colorScheme.onSurfaceVariant,
-        ),
-      ),
+    return AppListTile(
+      leading: _FlagBadge(flag: flag, isSelected: isSelected),
+      title: title,
+      subtitle: subtitle,
       trailing: isSelected
-          ? Icon(Icons.check_circle, color: colorScheme.primary)
-          : Icon(Icons.circle_outlined, color: colorScheme.outline),
+          ? AppIcon.primary(Icons.check_circle, size: AppIconSizes.standard)
+          : AppIcon.muted(Icons.circle_outlined, size: AppIconSizes.standard),
       onTap: onTap,
+    );
+  }
+}
+
+class _FlagBadge extends StatelessWidget {
+  final String flag;
+  final bool isSelected;
+
+  const _FlagBadge({required this.flag, required this.isSelected});
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return Container(
+      width: 40,
+      height: 40,
+      decoration: BoxDecoration(
+        color: isSelected
+            ? colorScheme.primaryContainer
+            : colorScheme.surfaceContainerHighest,
+        borderRadius: AppRadii.borderRadiusSm,
+      ),
+      alignment: Alignment.center,
+      child: Text(flag, style: const TextStyle(fontSize: 20)),
     );
   }
 }
@@ -220,7 +207,7 @@ Future<Locale?> showLanguageDialog(BuildContext context) {
               style: theme.textTheme.headlineSmall,
             ),
           ),
-          const Divider(),
+          const AppDivider(),
           Expanded(
             child: ListView(
               controller: scrollController,
@@ -228,8 +215,8 @@ Future<Locale?> showLanguageDialog(BuildContext context) {
               children: [
                 _LanguageDialogOption(
                   flag: '🌐',
-                  title: 'System',
-                  subtitle: 'Use device language',
+                  title: l10n.systemLanguage,
+                  subtitle: l10n.useDeviceLanguage,
                   onTap: () => Navigator.pop(context, null),
                 ),
                 ...supportedLanguages.map(
@@ -265,31 +252,14 @@ class _LanguageDialogOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-
-    return ListTile(
+    return AppListTile(
       contentPadding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.xxl,
         vertical: AppSpacing.xxs,
       ),
-      leading: Container(
-        width: 40,
-        height: 40,
-        decoration: BoxDecoration(
-          color: colorScheme.surfaceContainerHighest,
-          borderRadius: AppRadii.borderRadiusSm,
-        ),
-        alignment: Alignment.center,
-        child: Text(flag, style: const TextStyle(fontSize: 20)),
-      ),
-      title: Text(title),
-      subtitle: Text(
-        subtitle,
-        style: theme.textTheme.bodySmall?.copyWith(
-          color: colorScheme.onSurfaceVariant,
-        ),
-      ),
+      leading: _FlagBadge(flag: flag, isSelected: false),
+      title: title,
+      subtitle: subtitle,
       onTap: onTap,
     );
   }
@@ -302,32 +272,18 @@ class LanguageSwitcherTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final settings = ref.watch(appSettingsProvider);
     final settingsNotifier = ref.read(appSettingsProvider.notifier);
 
-    return ListTile(
-      contentPadding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.lg,
-        vertical: AppSpacing.xs,
+    return AppListTile(
+      leading: _FlagBadge(
+        flag: getCurrentLanguageFlag(settings.locale),
+        isSelected: false,
       ),
-      leading: Container(
-        width: 40,
-        height: 40,
-        decoration: BoxDecoration(
-          color: colorScheme.surfaceContainerHighest,
-          borderRadius: AppRadii.borderRadiusSm,
-        ),
-        alignment: Alignment.center,
-        child: Text(
-          getCurrentLanguageFlag(settings.locale),
-          style: const TextStyle(fontSize: 20),
-        ),
-      ),
-      title: Text(l10n.language),
-      subtitle: Text(getCurrentLanguageName(settings.locale)),
-      trailing: const Icon(Icons.chevron_right),
+      title: l10n.language,
+      subtitle: getLocalizedCurrentLanguageName(settings.locale, l10n),
+      trailing: const AppIcon.muted(Icons.chevron_right),
+      showDisclosure: false,
       onTap: () async {
         final result = await showLanguageDialog(context);
         settingsNotifier.setLocale(result);
@@ -339,6 +295,16 @@ class LanguageSwitcherTile extends ConsumerWidget {
 /// Get the current language name.
 String getCurrentLanguageName(Locale? locale) {
   if (locale == null) return 'System';
+  final lang = supportedLanguages.firstWhere(
+    (l) => l.code == locale.languageCode,
+    orElse: () => supportedLanguages.first,
+  );
+  return lang.nativeName;
+}
+
+/// Get localized current language name.
+String getLocalizedCurrentLanguageName(Locale? locale, AppLocalizations l10n) {
+  if (locale == null) return l10n.systemLanguage;
   final lang = supportedLanguages.firstWhere(
     (l) => l.code == locale.languageCode,
     orElse: () => supportedLanguages.first,

@@ -211,4 +211,171 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noItemsMessage => 'There are no items to display';
+
+  @override
+  String get inputPasswordLabel => 'Password';
+
+  @override
+  String get inputShowPassword => 'Show password';
+
+  @override
+  String get inputHidePassword => 'Hide password';
+
+  @override
+  String get inputSearchHint => 'Search...';
+
+  @override
+  String get inputClear => 'Clear';
+
+  @override
+  String get inputPhoneLabel => 'Phone Number';
+
+  @override
+  String get inputEmailLabel => 'Email';
+
+  @override
+  String get inputEmailHint => 'example@email.com';
+
+  @override
+  String get inputEmailRequired => 'Email is required';
+
+  @override
+  String get inputEmailInvalid => 'Enter a valid email';
+
+  @override
+  String get buttonLoading => 'Loading...';
+
+  @override
+  String get actionSubmit => 'Submit';
+
+  @override
+  String get actionContinue => 'Continue';
+
+  @override
+  String get actionBack => 'Back';
+
+  @override
+  String get actionNext => 'Next';
+
+  @override
+  String get actionDone => 'Done';
+
+  @override
+  String get actionConfirm => 'Confirm';
+
+  @override
+  String get actionApply => 'Apply';
+
+  @override
+  String get actionReset => 'Reset';
+
+  @override
+  String get actionRefresh => 'Refresh';
+
+  @override
+  String get actionShare => 'Share';
+
+  @override
+  String get actionCopy => 'Copy';
+
+  @override
+  String get actionPaste => 'Paste';
+
+  @override
+  String get sectionGeneral => 'General';
+
+  @override
+  String get sectionAccount => 'Account';
+
+  @override
+  String get sectionPrivacy => 'Privacy';
+
+  @override
+  String get sectionNotifications => 'Notifications';
+
+  @override
+  String get sectionHelp => 'Help & Support';
+
+  @override
+  String get statusOnline => 'Online';
+
+  @override
+  String get statusOffline => 'Offline';
+
+  @override
+  String get statusConnecting => 'Connecting...';
+
+  @override
+  String get statusSyncing => 'Syncing...';
+
+  @override
+  String get homeSubtitle => 'Flutter Template with Design Tokens';
+
+  @override
+  String get homeCounterHint => 'Tap the button to increment';
+
+  @override
+  String get quickActionsTitle => 'Quick Actions';
+
+  @override
+  String get widgetDemosTitle => 'Widget Demos';
+
+  @override
+  String get loadingData => 'Loading data...';
+
+  @override
+  String get somethingWentWrong => 'Something went wrong!';
+
+  @override
+  String get selectStateToPreview => 'Select a state to preview';
+
+  @override
+  String get skeletonLoadingTitle => 'Skeleton Loading';
+
+  @override
+  String get preferencesSection => 'Preferences';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get notificationsSubtitle => 'Receive push notifications';
+
+  @override
+  String get analytics => 'Analytics';
+
+  @override
+  String get analyticsSubtitle => 'Help improve the app';
+
+  @override
+  String get openSourceLicenses => 'Open source licenses';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get termsOfService => 'Terms of Service';
+
+  @override
+  String get madeWithFlutter => 'Made with ❤️ using Flutter';
+
+  @override
+  String versionInfo(String version, String build) {
+    return '$version (Build $build)';
+  }
+
+  @override
+  String get themeModeSystemSubtitle => 'Follow device settings';
+
+  @override
+  String get themeModeLightSubtitle => 'Always use light theme';
+
+  @override
+  String get themeModeDarkSubtitle => 'Always use dark theme';
+
+  @override
+  String get systemLanguage => 'System';
+
+  @override
+  String get useDeviceLanguage => 'Use device language';
 }

@@ -3,8 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:app_template/l10n/gen/app_localizations.dart';
 import 'package:app_template/presentation/router/app_router.dart';
-import 'package:app_template/presentation/theme/spacing.dart';
-import 'package:app_template/presentation/theme/radii.dart';
+import 'package:app_template/presentation/theme/theme.dart';
 import 'package:app_template/presentation/widgets/widgets.dart';
 
 /// Counter state provider.
@@ -12,8 +11,7 @@ final counterProvider = StateProvider<int>((ref) => 0);
 
 /// Home screen of the application.
 ///
-/// Demonstrates the use of design tokens for consistent styling
-/// and the new widget library.
+/// Demonstrates the use of design tokens and foundations for consistent styling.
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
@@ -28,7 +26,7 @@ class HomeScreen extends ConsumerWidget {
         centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.settings_outlined),
+            icon: const AppIcon(Icons.settings_outlined),
             tooltip: l10n.settingsTitle,
             onPressed: () => context.push(Routes.settings),
           ),
@@ -64,7 +62,7 @@ class HomeScreen extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => ref.read(counterProvider.notifier).state++,
-        icon: const Icon(Icons.add),
+        icon: const AppIcon(Icons.add, size: AppIconSizes.button),
         label: Text(l10n.increment),
       ),
     );
@@ -80,52 +78,35 @@ class _WelcomeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
+    final l10n = this.l10n;
 
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.xl),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
+    return AppCard(
+      padding: const EdgeInsets.all(AppSpacing.xl),
+      child: Row(
+        children: [
+          AppIconBadge.primary(icon: Icons.waving_hand, size: AppIconSizes.lg),
+          AppSpacing.horizontalGapLg,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  padding: const EdgeInsets.all(AppSpacing.md),
-                  decoration: BoxDecoration(
-                    color: colorScheme.primaryContainer,
-                    borderRadius: AppRadii.borderRadiusMd,
-                  ),
-                  child: Icon(
-                    Icons.waving_hand,
-                    color: colorScheme.onPrimaryContainer,
-                    size: 28,
+                Text(
+                  l10n.welcomeMessage,
+                  style: theme.textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                AppSpacing.horizontalGapLg,
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        l10n.welcomeMessage,
-                        style: theme.textTheme.headlineSmall?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      AppSpacing.verticalGapXs,
-                      Text(
-                        'Flutter Template with Design Tokens',
-                        style: theme.textTheme.bodyMedium?.copyWith(
-                          color: colorScheme.onSurfaceVariant,
-                        ),
-                      ),
-                    ],
+                AppSpacing.verticalGapXs,
+                Text(
+                  l10n.homeSubtitle,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: colorScheme.onSurfaceVariant,
                   ),
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -141,42 +122,41 @@ class _CounterCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
+    final l10n = this.l10n;
 
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.xl),
-        child: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(AppSpacing.xl),
-              decoration: BoxDecoration(
-                color: colorScheme.primaryContainer,
-                shape: BoxShape.circle,
-              ),
-              child: Text(
-                '$counter',
-                style: theme.textTheme.displayLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: colorScheme.onPrimaryContainer,
-                ),
+    return AppCard(
+      padding: const EdgeInsets.all(AppSpacing.xl),
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(AppSpacing.xl),
+            decoration: BoxDecoration(
+              color: colorScheme.primaryContainer,
+              shape: BoxShape.circle,
+            ),
+            child: Text(
+              '$counter',
+              style: theme.textTheme.displayLarge?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: colorScheme.onPrimaryContainer,
               ),
             ),
-            AppSpacing.verticalGapLg,
-            Text(
-              l10n.counterLabel,
-              style: theme.textTheme.titleMedium?.copyWith(
-                color: colorScheme.onSurfaceVariant,
-              ),
+          ),
+          AppSpacing.verticalGapLg,
+          Text(
+            l10n.counterLabel,
+            style: theme.textTheme.titleMedium?.copyWith(
+              color: colorScheme.onSurfaceVariant,
             ),
-            AppSpacing.verticalGapSm,
-            Text(
-              'Tap the button to increment',
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: colorScheme.outline,
-              ),
+          ),
+          AppSpacing.verticalGapSm,
+          Text(
+            l10n.homeCounterHint,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: colorScheme.outline,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -192,19 +172,9 @@ class _QuickActionsSection extends StatelessWidget {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return AppSection(
+      title: l10n.quickActionsTitle,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xs),
-          child: Text(
-            'Quick Actions',
-            style: theme.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ),
-        AppSpacing.verticalGapMd,
         Row(
           children: [
             Expanded(
@@ -248,33 +218,28 @@ class _ActionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return Card(
-      clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: onTap,
-        child: Padding(
-          padding: const EdgeInsets.all(AppSpacing.lg),
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(AppSpacing.md),
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.15),
-                  borderRadius: AppRadii.borderRadiusMd,
-                ),
-                child: Icon(icon, color: color, size: 28),
-              ),
-              AppSpacing.verticalGapMd,
-              Text(
-                label,
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  fontWeight: FontWeight.w500,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ],
+    return AppCard(
+      onTap: onTap,
+      padding: const EdgeInsets.all(AppSpacing.lg),
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(AppSpacing.md),
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.15),
+              borderRadius: AppRadii.borderRadiusMd,
+            ),
+            child: AppIcon(icon, color: color, size: AppIconSizes.lg),
           ),
-        ),
+          AppSpacing.verticalGapMd,
+          Text(
+            label,
+            style: theme.textTheme.bodyMedium?.copyWith(
+              fontWeight: FontWeight.w500,
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }
@@ -296,23 +261,11 @@ class _DemoWidgetsSectionState extends State<_DemoWidgetsSection> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final l10n = widget.l10n;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return AppSection(
+      title: l10n.widgetDemosTitle,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xs),
-          child: Text(
-            'Widget Demos',
-            style: theme.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ),
-        AppSpacing.verticalGapMd,
-
         // Toggle buttons
         Wrap(
           spacing: AppSpacing.sm,
@@ -357,44 +310,24 @@ class _DemoWidgetsSectionState extends State<_DemoWidgetsSection> {
         AppSpacing.verticalGapMd,
 
         // Demo content
-        Card(child: SizedBox(height: 200, child: _buildDemoContent(l10n))),
+        AppCard(child: SizedBox(height: 200, child: _buildDemoContent(l10n))),
 
         AppSpacing.verticalGapLg,
 
         // Skeleton demo
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xs),
-          child: Text(
-            'Skeleton Loading',
-            style: theme.textTheme.titleSmall?.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ),
-        AppSpacing.verticalGapSm,
-        const Card(
-          child: Column(
-            children: [
-              ListItemSkeleton(showLeading: true, showTrailing: true),
-              Divider(height: 1),
-              ListItemSkeleton(showLeading: true),
-              Divider(height: 1),
-              ListItemSkeleton(showLeading: true, showTrailing: true),
-            ],
-          ),
-        ),
+        _SkeletonDemo(l10n: l10n),
       ],
     );
   }
 
   Widget _buildDemoContent(AppLocalizations l10n) {
     if (_showLoading) {
-      return const LoadingIndicator(message: 'Loading data...');
+      return LoadingIndicator(message: l10n.loadingData);
     }
 
     if (_showError) {
       return CompactErrorDisplay(
-        message: 'Something went wrong!',
+        message: l10n.somethingWentWrong,
         onRetry: () => setState(() => _showError = false),
       );
     }
@@ -410,20 +343,52 @@ class _DemoWidgetsSectionState extends State<_DemoWidgetsSection> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            Icons.touch_app_outlined,
-            size: 48,
-            color: Theme.of(context).colorScheme.outline,
-          ),
+          AppIcon.muted(Icons.touch_app_outlined, size: AppIconSizes.xhuge),
           AppSpacing.verticalGapMd,
           Text(
-            'Select a state to preview',
+            l10n.selectStateToPreview,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Theme.of(context).colorScheme.onSurfaceVariant,
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class _SkeletonDemo extends StatelessWidget {
+  final AppLocalizations l10n;
+
+  const _SkeletonDemo({required this.l10n});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          l10n.skeletonLoadingTitle,
+          style: theme.textTheme.titleSmall?.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        AppSpacing.verticalGapSm,
+        AppCard(
+          padding: EdgeInsets.zero,
+          child: Column(
+            children: [
+              const ListItemSkeleton(showLeading: true, showTrailing: true),
+              const AppDivider(),
+              const ListItemSkeleton(showLeading: true),
+              const AppDivider(),
+              const ListItemSkeleton(showLeading: true, showTrailing: true),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

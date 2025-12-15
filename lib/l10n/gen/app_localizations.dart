@@ -405,6 +405,336 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'There are no items to display'**
   String get noItemsMessage;
+
+  /// Password field label
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get inputPasswordLabel;
+
+  /// Show password tooltip
+  ///
+  /// In en, this message translates to:
+  /// **'Show password'**
+  String get inputShowPassword;
+
+  /// Hide password tooltip
+  ///
+  /// In en, this message translates to:
+  /// **'Hide password'**
+  String get inputHidePassword;
+
+  /// Search field hint text
+  ///
+  /// In en, this message translates to:
+  /// **'Search...'**
+  String get inputSearchHint;
+
+  /// Clear button tooltip
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get inputClear;
+
+  /// Phone field label
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get inputPhoneLabel;
+
+  /// Email field label
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get inputEmailLabel;
+
+  /// Email field hint
+  ///
+  /// In en, this message translates to:
+  /// **'example@email.com'**
+  String get inputEmailHint;
+
+  /// Email required validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Email is required'**
+  String get inputEmailRequired;
+
+  /// Email invalid validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid email'**
+  String get inputEmailInvalid;
+
+  /// Loading button state text
+  ///
+  /// In en, this message translates to:
+  /// **'Loading...'**
+  String get buttonLoading;
+
+  /// Submit action text
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get actionSubmit;
+
+  /// Continue action text
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get actionContinue;
+
+  /// Back action text
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get actionBack;
+
+  /// Next action text
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get actionNext;
+
+  /// Done action text
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get actionDone;
+
+  /// Confirm action text
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get actionConfirm;
+
+  /// Apply action text
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get actionApply;
+
+  /// Reset action text
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get actionReset;
+
+  /// Refresh action text
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh'**
+  String get actionRefresh;
+
+  /// Share action text
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get actionShare;
+
+  /// Copy action text
+  ///
+  /// In en, this message translates to:
+  /// **'Copy'**
+  String get actionCopy;
+
+  /// Paste action text
+  ///
+  /// In en, this message translates to:
+  /// **'Paste'**
+  String get actionPaste;
+
+  /// General section header
+  ///
+  /// In en, this message translates to:
+  /// **'General'**
+  String get sectionGeneral;
+
+  /// Account section header
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get sectionAccount;
+
+  /// Privacy section header
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy'**
+  String get sectionPrivacy;
+
+  /// Notifications section header
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get sectionNotifications;
+
+  /// Help section header
+  ///
+  /// In en, this message translates to:
+  /// **'Help & Support'**
+  String get sectionHelp;
+
+  /// Online status
+  ///
+  /// In en, this message translates to:
+  /// **'Online'**
+  String get statusOnline;
+
+  /// Offline status
+  ///
+  /// In en, this message translates to:
+  /// **'Offline'**
+  String get statusOffline;
+
+  /// Connecting status
+  ///
+  /// In en, this message translates to:
+  /// **'Connecting...'**
+  String get statusConnecting;
+
+  /// Syncing status
+  ///
+  /// In en, this message translates to:
+  /// **'Syncing...'**
+  String get statusSyncing;
+
+  /// Subtitle on home screen welcome card
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter Template with Design Tokens'**
+  String get homeSubtitle;
+
+  /// Hint text below counter
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the button to increment'**
+  String get homeCounterHint;
+
+  /// Quick actions section title
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Actions'**
+  String get quickActionsTitle;
+
+  /// Widget demos section title
+  ///
+  /// In en, this message translates to:
+  /// **'Widget Demos'**
+  String get widgetDemosTitle;
+
+  /// Loading data message
+  ///
+  /// In en, this message translates to:
+  /// **'Loading data...'**
+  String get loadingData;
+
+  /// Generic error message for demos
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong!'**
+  String get somethingWentWrong;
+
+  /// Hint to select a demo state
+  ///
+  /// In en, this message translates to:
+  /// **'Select a state to preview'**
+  String get selectStateToPreview;
+
+  /// Skeleton loading demo title
+  ///
+  /// In en, this message translates to:
+  /// **'Skeleton Loading'**
+  String get skeletonLoadingTitle;
+
+  /// Preferences section title
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences'**
+  String get preferencesSection;
+
+  /// Notifications setting title
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notifications;
+
+  /// Notifications setting subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Receive push notifications'**
+  String get notificationsSubtitle;
+
+  /// Analytics setting title
+  ///
+  /// In en, this message translates to:
+  /// **'Analytics'**
+  String get analytics;
+
+  /// Analytics setting subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Help improve the app'**
+  String get analyticsSubtitle;
+
+  /// Open source licenses subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Open source licenses'**
+  String get openSourceLicenses;
+
+  /// Privacy policy link title
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// Terms of service link title
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Service'**
+  String get termsOfService;
+
+  /// Footer credit text
+  ///
+  /// In en, this message translates to:
+  /// **'Made with ❤️ using Flutter'**
+  String get madeWithFlutter;
+
+  /// Version and build info
+  ///
+  /// In en, this message translates to:
+  /// **'{version} (Build {build})'**
+  String versionInfo(String version, String build);
+
+  /// System theme mode description
+  ///
+  /// In en, this message translates to:
+  /// **'Follow device settings'**
+  String get themeModeSystemSubtitle;
+
+  /// Light theme mode description
+  ///
+  /// In en, this message translates to:
+  /// **'Always use light theme'**
+  String get themeModeLightSubtitle;
+
+  /// Dark theme mode description
+  ///
+  /// In en, this message translates to:
+  /// **'Always use dark theme'**
+  String get themeModeDarkSubtitle;
+
+  /// System language option
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get systemLanguage;
+
+  /// System language option subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Use device language'**
+  String get useDeviceLanguage;
 }
 
 class _AppLocalizationsDelegate

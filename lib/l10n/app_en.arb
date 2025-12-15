@@ -303,5 +303,290 @@
   "noItemsMessage": "There are no items to display",
   "@noItemsMessage": {
     "description": "Empty state message when no items"
+  },
+
+  "inputPasswordLabel": "Password",
+  "@inputPasswordLabel": {
+    "description": "Password field label"
+  },
+
+  "inputShowPassword": "Show password",
+  "@inputShowPassword": {
+    "description": "Show password tooltip"
+  },
+
+  "inputHidePassword": "Hide password",
+  "@inputHidePassword": {
+    "description": "Hide password tooltip"
+  },
+
+  "inputSearchHint": "Search...",
+  "@inputSearchHint": {
+    "description": "Search field hint text"
+  },
+
+  "inputClear": "Clear",
+  "@inputClear": {
+    "description": "Clear button tooltip"
+  },
+
+  "inputPhoneLabel": "Phone Number",
+  "@inputPhoneLabel": {
+    "description": "Phone field label"
+  },
+
+  "inputEmailLabel": "Email",
+  "@inputEmailLabel": {
+    "description": "Email field label"
+  },
+
+  "inputEmailHint": "example@email.com",
+  "@inputEmailHint": {
+    "description": "Email field hint"
+  },
+
+  "inputEmailRequired": "Email is required",
+  "@inputEmailRequired": {
+    "description": "Email required validation message"
+  },
+
+  "inputEmailInvalid": "Enter a valid email",
+  "@inputEmailInvalid": {
+    "description": "Email invalid validation message"
+  },
+
+  "buttonLoading": "Loading...",
+  "@buttonLoading": {
+    "description": "Loading button state text"
+  },
+
+  "actionSubmit": "Submit",
+  "@actionSubmit": {
+    "description": "Submit action text"
+  },
+
+  "actionContinue": "Continue",
+  "@actionContinue": {
+    "description": "Continue action text"
+  },
+
+  "actionBack": "Back",
+  "@actionBack": {
+    "description": "Back action text"
+  },
+
+  "actionNext": "Next",
+  "@actionNext": {
+    "description": "Next action text"
+  },
+
+  "actionDone": "Done",
+  "@actionDone": {
+    "description": "Done action text"
+  },
+
+  "actionConfirm": "Confirm",
+  "@actionConfirm": {
+    "description": "Confirm action text"
+  },
+
+  "actionApply": "Apply",
+  "@actionApply": {
+    "description": "Apply action text"
+  },
+
+  "actionReset": "Reset",
+  "@actionReset": {
+    "description": "Reset action text"
+  },
+
+  "actionRefresh": "Refresh",
+  "@actionRefresh": {
+    "description": "Refresh action text"
+  },
+
+  "actionShare": "Share",
+  "@actionShare": {
+    "description": "Share action text"
+  },
+
+  "actionCopy": "Copy",
+  "@actionCopy": {
+    "description": "Copy action text"
+  },
+
+  "actionPaste": "Paste",
+  "@actionPaste": {
+    "description": "Paste action text"
+  },
+
+  "sectionGeneral": "General",
+  "@sectionGeneral": {
+    "description": "General section header"
+  },
+
+  "sectionAccount": "Account",
+  "@sectionAccount": {
+    "description": "Account section header"
+  },
+
+  "sectionPrivacy": "Privacy",
+  "@sectionPrivacy": {
+    "description": "Privacy section header"
+  },
+
+  "sectionNotifications": "Notifications",
+  "@sectionNotifications": {
+    "description": "Notifications section header"
+  },
+
+  "sectionHelp": "Help & Support",
+  "@sectionHelp": {
+    "description": "Help section header"
+  },
+
+  "statusOnline": "Online",
+  "@statusOnline": {
+    "description": "Online status"
+  },
+
+  "statusOffline": "Offline",
+  "@statusOffline": {
+    "description": "Offline status"
+  },
+
+  "statusConnecting": "Connecting...",
+  "@statusConnecting": {
+    "description": "Connecting status"
+  },
+
+  "statusSyncing": "Syncing...",
+  "@statusSyncing": {
+    "description": "Syncing status"
+  },
+
+  "homeSubtitle": "Flutter Template with Design Tokens",
+  "@homeSubtitle": {
+    "description": "Subtitle on home screen welcome card"
+  },
+
+  "homeCounterHint": "Tap the button to increment",
+  "@homeCounterHint": {
+    "description": "Hint text below counter"
+  },
+
+  "quickActionsTitle": "Quick Actions",
+  "@quickActionsTitle": {
+    "description": "Quick actions section title"
+  },
+
+  "widgetDemosTitle": "Widget Demos",
+  "@widgetDemosTitle": {
+    "description": "Widget demos section title"
+  },
+
+  "loadingData": "Loading data...",
+  "@loadingData": {
+    "description": "Loading data message"
+  },
+
+  "somethingWentWrong": "Something went wrong!",
+  "@somethingWentWrong": {
+    "description": "Generic error message for demos"
+  },
+
+  "selectStateToPreview": "Select a state to preview",
+  "@selectStateToPreview": {
+    "description": "Hint to select a demo state"
+  },
+
+  "skeletonLoadingTitle": "Skeleton Loading",
+  "@skeletonLoadingTitle": {
+    "description": "Skeleton loading demo title"
+  },
+
+  "preferencesSection": "Preferences",
+  "@preferencesSection": {
+    "description": "Preferences section title"
+  },
+
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "Notifications setting title"
+  },
+
+  "notificationsSubtitle": "Receive push notifications",
+  "@notificationsSubtitle": {
+    "description": "Notifications setting subtitle"
+  },
+
+  "analytics": "Analytics",
+  "@analytics": {
+    "description": "Analytics setting title"
+  },
+
+  "analyticsSubtitle": "Help improve the app",
+  "@analyticsSubtitle": {
+    "description": "Analytics setting subtitle"
+  },
+
+  "openSourceLicenses": "Open source licenses",
+  "@openSourceLicenses": {
+    "description": "Open source licenses subtitle"
+  },
+
+  "privacyPolicy": "Privacy Policy",
+  "@privacyPolicy": {
+    "description": "Privacy policy link title"
+  },
+
+  "termsOfService": "Terms of Service",
+  "@termsOfService": {
+    "description": "Terms of service link title"
+  },
+
+  "madeWithFlutter": "Made with ❤️ using Flutter",
+  "@madeWithFlutter": {
+    "description": "Footer credit text"
+  },
+
+  "versionInfo": "{version} (Build {build})",
+  "@versionInfo": {
+    "description": "Version and build info",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "1.0.0"
+      },
+      "build": {
+        "type": "String",
+        "example": "1"
+      }
+    }
+  },
+
+  "themeModeSystemSubtitle": "Follow device settings",
+  "@themeModeSystemSubtitle": {
+    "description": "System theme mode description"
+  },
+
+  "themeModeLightSubtitle": "Always use light theme",
+  "@themeModeLightSubtitle": {
+    "description": "Light theme mode description"
+  },
+
+  "themeModeDarkSubtitle": "Always use dark theme",
+  "@themeModeDarkSubtitle": {
+    "description": "Dark theme mode description"
+  },
+
+  "systemLanguage": "System",
+  "@systemLanguage": {
+    "description": "System language option"
+  },
+
+  "useDeviceLanguage": "Use device language",
+  "@useDeviceLanguage": {
+    "description": "System language option subtitle"
   }
 }

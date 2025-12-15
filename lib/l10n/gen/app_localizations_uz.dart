@@ -211,4 +211,171 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get noItemsMessage => 'Ko\'rsatish uchun elementlar yo\'q';
+
+  @override
+  String get inputPasswordLabel => 'Parol';
+
+  @override
+  String get inputShowPassword => 'Parolni ko\'rsatish';
+
+  @override
+  String get inputHidePassword => 'Parolni yashirish';
+
+  @override
+  String get inputSearchHint => 'Qidirish...';
+
+  @override
+  String get inputClear => 'Tozalash';
+
+  @override
+  String get inputPhoneLabel => 'Telefon raqami';
+
+  @override
+  String get inputEmailLabel => 'Elektron pochta';
+
+  @override
+  String get inputEmailHint => 'example@email.com';
+
+  @override
+  String get inputEmailRequired => 'Elektron pochta talab qilinadi';
+
+  @override
+  String get inputEmailInvalid => 'To\'g\'ri email kiriting';
+
+  @override
+  String get buttonLoading => 'Yuklanmoqda...';
+
+  @override
+  String get actionSubmit => 'Yuborish';
+
+  @override
+  String get actionContinue => 'Davom etish';
+
+  @override
+  String get actionBack => 'Orqaga';
+
+  @override
+  String get actionNext => 'Keyingi';
+
+  @override
+  String get actionDone => 'Tayyor';
+
+  @override
+  String get actionConfirm => 'Tasdiqlash';
+
+  @override
+  String get actionApply => 'Qo\'llash';
+
+  @override
+  String get actionReset => 'Qayta tiklash';
+
+  @override
+  String get actionRefresh => 'Yangilash';
+
+  @override
+  String get actionShare => 'Ulashish';
+
+  @override
+  String get actionCopy => 'Nusxalash';
+
+  @override
+  String get actionPaste => 'Qo\'yish';
+
+  @override
+  String get sectionGeneral => 'Umumiy';
+
+  @override
+  String get sectionAccount => 'Hisob';
+
+  @override
+  String get sectionPrivacy => 'Maxfiylik';
+
+  @override
+  String get sectionNotifications => 'Bildirishnomalar';
+
+  @override
+  String get sectionHelp => 'Yordam va qo\'llab-quvvatlash';
+
+  @override
+  String get statusOnline => 'Onlayn';
+
+  @override
+  String get statusOffline => 'Oflayn';
+
+  @override
+  String get statusConnecting => 'Ulanmoqda...';
+
+  @override
+  String get statusSyncing => 'Sinxronlanmoqda...';
+
+  @override
+  String get homeSubtitle => 'Dizayn tokenlari bilan Flutter shabloni';
+
+  @override
+  String get homeCounterHint => 'Oshirish uchun tugmani bosing';
+
+  @override
+  String get quickActionsTitle => 'Tezkor amallar';
+
+  @override
+  String get widgetDemosTitle => 'Vidjet namoyishlari';
+
+  @override
+  String get loadingData => 'Ma\'lumotlar yuklanmoqda...';
+
+  @override
+  String get somethingWentWrong => 'Xatolik yuz berdi!';
+
+  @override
+  String get selectStateToPreview => 'Ko\'rish uchun holatni tanlang';
+
+  @override
+  String get skeletonLoadingTitle => 'Skelet yuklash';
+
+  @override
+  String get preferencesSection => 'Sozlamalar';
+
+  @override
+  String get notifications => 'Bildirishnomalar';
+
+  @override
+  String get notificationsSubtitle => 'Push-bildirishnomalarni qabul qilish';
+
+  @override
+  String get analytics => 'Tahlillar';
+
+  @override
+  String get analyticsSubtitle => 'Ilovani yaxshilashga yordam bering';
+
+  @override
+  String get openSourceLicenses => 'Ochiq kodli litsenziyalar';
+
+  @override
+  String get privacyPolicy => 'Maxfiylik siyosati';
+
+  @override
+  String get termsOfService => 'Foydalanish shartlari';
+
+  @override
+  String get madeWithFlutter => 'Flutter yordamida ❤️ bilan yaratilgan';
+
+  @override
+  String versionInfo(String version, String build) {
+    return '$version (Build $build)';
+  }
+
+  @override
+  String get themeModeSystemSubtitle => 'Qurilma sozlamalariga amal qilish';
+
+  @override
+  String get themeModeLightSubtitle => 'Doim yorug\' mavzudan foydalanish';
+
+  @override
+  String get themeModeDarkSubtitle => 'Doim qorong\'u mavzudan foydalanish';
+
+  @override
+  String get systemLanguage => 'Tizim';
+
+  @override
+  String get useDeviceLanguage => 'Qurilma tilidan foydalanish';
 }

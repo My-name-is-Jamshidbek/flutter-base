@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:app_template/core/config/app_settings.dart';
 import 'package:app_template/l10n/gen/app_localizations.dart';
-import 'package:app_template/presentation/theme/spacing.dart';
-import 'package:app_template/presentation/theme/radii.dart';
+import 'package:app_template/presentation/theme/theme.dart';
 
 /// A card widget for managing theme settings.
 ///
 /// Displays current theme mode and allows switching between
 /// system, light, and dark themes.
-/// Uses semantic spacing and design tokens.
+/// Uses foundations: AppCard, AppSection, AppIcon, AppIconSizes, AppSpacing.
 class ThemeManagerCard extends ConsumerWidget {
   const ThemeManagerCard({super.key});
 
@@ -17,15 +16,15 @@ class ThemeManagerCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final settings = ref.watch(appSettingsProvider);
     final settingsNotifier = ref.read(appSettingsProvider.notifier);
 
-    return Card(
+    return AppCard(
       margin: const EdgeInsets.symmetric(
         horizontal: AppSpacing.lg,
         vertical: AppSpacing.sm,
       ),
+      padding: EdgeInsets.zero,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -39,17 +38,9 @@ class ThemeManagerCard extends ConsumerWidget {
             ),
             child: Row(
               children: [
-                Container(
-                  padding: const EdgeInsets.all(AppSpacing.sm),
-                  decoration: BoxDecoration(
-                    color: colorScheme.primaryContainer,
-                    borderRadius: AppRadii.borderRadiusSm,
-                  ),
-                  child: Icon(
-                    Icons.palette_outlined,
-                    color: colorScheme.onPrimaryContainer,
-                    size: 20,
-                  ),
+                AppIconBadge.primary(
+                  icon: Icons.palette_outlined,
+                  size: AppIconSizes.md,
                 ),
                 AppSpacing.horizontalGapMd,
                 Text(
@@ -62,27 +53,27 @@ class ThemeManagerCard extends ConsumerWidget {
             ),
           ),
 
-          const Divider(height: 1),
+          const AppDivider(),
 
           // Theme mode options
           _ThemeModeOption(
             icon: Icons.brightness_auto,
             title: l10n.themeModeSystem,
-            subtitle: 'Follow device settings',
+            subtitle: l10n.themeModeSystemSubtitle,
             isSelected: settings.themeMode == ThemeMode.system,
             onTap: () => settingsNotifier.setThemeMode(ThemeMode.system),
           ),
           _ThemeModeOption(
             icon: Icons.light_mode,
             title: l10n.themeModeLight,
-            subtitle: 'Always use light theme',
+            subtitle: l10n.themeModeLightSubtitle,
             isSelected: settings.themeMode == ThemeMode.light,
             onTap: () => settingsNotifier.setThemeMode(ThemeMode.light),
           ),
           _ThemeModeOption(
             icon: Icons.dark_mode,
             title: l10n.themeModeDark,
-            subtitle: 'Always use dark theme',
+            subtitle: l10n.themeModeDarkSubtitle,
             isSelected: settings.themeMode == ThemeMode.dark,
             onTap: () => settingsNotifier.setThemeMode(ThemeMode.dark),
           ),
@@ -111,46 +102,15 @@ class _ThemeModeOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-
-    return ListTile(
-      contentPadding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.lg,
-        vertical: AppSpacing.xxs,
-      ),
-      leading: Container(
-        padding: const EdgeInsets.all(AppSpacing.sm),
-        decoration: BoxDecoration(
-          color: isSelected
-              ? colorScheme.primaryContainer
-              : colorScheme.surfaceContainerHighest,
-          borderRadius: AppRadii.borderRadiusSm,
-        ),
-        child: Icon(
-          icon,
-          size: 20,
-          color: isSelected
-              ? colorScheme.onPrimaryContainer
-              : colorScheme.onSurfaceVariant,
-        ),
-      ),
-      title: Text(
-        title,
-        style: theme.textTheme.bodyLarge?.copyWith(
-          color: isSelected ? colorScheme.primary : colorScheme.onSurface,
-          fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
-        ),
-      ),
-      subtitle: Text(
-        subtitle,
-        style: theme.textTheme.bodySmall?.copyWith(
-          color: colorScheme.onSurfaceVariant,
-        ),
-      ),
+    return AppListTile(
+      leading: isSelected
+          ? AppIconBadge.primary(icon: icon, size: AppIconSizes.md)
+          : AppIconBadge.surface(icon: icon, size: AppIconSizes.md),
+      title: title,
+      subtitle: subtitle,
       trailing: isSelected
-          ? Icon(Icons.check_circle, color: colorScheme.primary)
-          : Icon(Icons.circle_outlined, color: colorScheme.outline),
+          ? AppIcon.primary(Icons.check_circle, size: AppIconSizes.standard)
+          : AppIcon.muted(Icons.circle_outlined, size: AppIconSizes.standard),
       onTap: onTap,
     );
   }
@@ -176,23 +136,23 @@ Future<ThemeMode?> showThemeModeDialog(BuildContext context) {
             ),
             child: Text(l10n.themeMode, style: theme.textTheme.headlineSmall),
           ),
-          const Divider(),
+          const AppDivider(),
           _ThemeDialogOption(
             icon: Icons.brightness_auto,
             title: l10n.themeModeSystem,
-            subtitle: 'Follow device settings',
+            subtitle: l10n.themeModeSystemSubtitle,
             onTap: () => Navigator.pop(context, ThemeMode.system),
           ),
           _ThemeDialogOption(
             icon: Icons.light_mode,
             title: l10n.themeModeLight,
-            subtitle: 'Always use light theme',
+            subtitle: l10n.themeModeLightSubtitle,
             onTap: () => Navigator.pop(context, ThemeMode.light),
           ),
           _ThemeDialogOption(
             icon: Icons.dark_mode,
             title: l10n.themeModeDark,
-            subtitle: 'Always use dark theme',
+            subtitle: l10n.themeModeDarkSubtitle,
             onTap: () => Navigator.pop(context, ThemeMode.dark),
           ),
           AppSpacing.verticalGapLg,
@@ -217,29 +177,14 @@ class _ThemeDialogOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-
-    return ListTile(
+    return AppListTile(
       contentPadding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.xxl,
         vertical: AppSpacing.xxs,
       ),
-      leading: Container(
-        padding: const EdgeInsets.all(AppSpacing.sm),
-        decoration: BoxDecoration(
-          color: colorScheme.surfaceContainerHighest,
-          borderRadius: AppRadii.borderRadiusSm,
-        ),
-        child: Icon(icon, size: 20, color: colorScheme.onSurfaceVariant),
-      ),
-      title: Text(title),
-      subtitle: Text(
-        subtitle,
-        style: theme.textTheme.bodySmall?.copyWith(
-          color: colorScheme.onSurfaceVariant,
-        ),
-      ),
+      leading: AppIconBadge.surface(icon: icon, size: AppIconSizes.md),
+      title: title,
+      subtitle: subtitle,
       onTap: onTap,
     );
   }
@@ -252,31 +197,18 @@ class ThemeSwitcherTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final settings = ref.watch(appSettingsProvider);
     final settingsNotifier = ref.read(appSettingsProvider.notifier);
 
-    return ListTile(
-      contentPadding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.lg,
-        vertical: AppSpacing.xs,
+    return AppListTile(
+      leading: AppIconBadge.surface(
+        icon: _getThemeModeIcon(settings.themeMode),
+        size: AppIconSizes.md,
       ),
-      leading: Container(
-        padding: const EdgeInsets.all(AppSpacing.sm),
-        decoration: BoxDecoration(
-          color: colorScheme.surfaceContainerHighest,
-          borderRadius: AppRadii.borderRadiusSm,
-        ),
-        child: Icon(
-          _getThemeModeIcon(settings.themeMode),
-          size: 20,
-          color: colorScheme.onSurfaceVariant,
-        ),
-      ),
-      title: Text(l10n.themeMode),
-      subtitle: Text(_getThemeModeLabel(settings.themeMode, l10n)),
-      trailing: const Icon(Icons.chevron_right),
+      title: l10n.themeMode,
+      subtitle: _getThemeModeLabel(settings.themeMode, l10n),
+      trailing: const AppIcon.muted(Icons.chevron_right),
+      showDisclosure: false,
       onTap: () async {
         final result = await showThemeModeDialog(context);
         if (result != null) {
@@ -326,20 +258,17 @@ class DarkModeToggleTile extends ConsumerWidget {
         horizontal: AppSpacing.lg,
         vertical: AppSpacing.xs,
       ),
-      secondary: Container(
-        padding: const EdgeInsets.all(AppSpacing.sm),
-        decoration: BoxDecoration(
-          color: colorScheme.surfaceContainerHighest,
-          borderRadius: AppRadii.borderRadiusSm,
-        ),
-        child: Icon(
-          Icons.dark_mode,
-          size: 20,
+      secondary: AppIconBadge.surface(
+        icon: Icons.dark_mode,
+        size: AppIconSizes.md,
+      ),
+      title: Text(l10n.darkMode),
+      subtitle: Text(
+        l10n.darkModeSubtitle,
+        style: theme.textTheme.bodySmall?.copyWith(
           color: colorScheme.onSurfaceVariant,
         ),
       ),
-      title: Text(l10n.darkMode),
-      subtitle: Text(l10n.darkModeSubtitle),
       value: settings.themeMode == ThemeMode.dark,
       onChanged: (value) {
         settingsNotifier.setThemeMode(value ? ThemeMode.dark : ThemeMode.light);

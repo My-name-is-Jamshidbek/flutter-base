@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:app_template/presentation/theme/spacing.dart';
-import 'package:app_template/presentation/theme/radii.dart';
+import 'package:app_template/presentation/theme/theme.dart';
 
 /// A loading indicator widget with optional message.
 ///
 /// Displays a circular progress indicator with optional loading message.
-/// Uses semantic spacing from design tokens.
+/// Uses foundations: AppSpacing, AppDurations, AppCurves.
 class LoadingIndicator extends StatelessWidget {
   /// Optional message to display below the indicator.
   final String? message;
@@ -143,9 +142,13 @@ class LoadingOverlay extends StatelessWidget {
         child,
         if (isLoading)
           Positioned.fill(
-            child: Container(
-              color: colorScheme.surface.withValues(alpha: opacity),
-              child: LoadingIndicator(message: message),
+            child: AppAnimatedOpacity(
+              opacity: 1.0,
+              duration: AppDurations.fade,
+              child: Container(
+                color: colorScheme.surface.withValues(alpha: opacity),
+                child: LoadingIndicator(message: message),
+              ),
             ),
           ),
       ],
@@ -185,11 +188,12 @@ class _ShimmerPlaceholderState extends State<ShimmerPlaceholder>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1500),
+      duration: AppDurations.shimmer,
     )..repeat();
-    _animation = Tween<double>(begin: -1, end: 2).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOutSine),
-    );
+    _animation = Tween<double>(
+      begin: -1,
+      end: 2,
+    ).animate(CurvedAnimation(parent: _controller, curve: AppCurves.standard));
   }
 
   @override

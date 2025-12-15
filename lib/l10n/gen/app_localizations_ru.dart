@@ -218,4 +218,171 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get noItemsMessage => 'Нет элементов для отображения';
+
+  @override
+  String get inputPasswordLabel => 'Пароль';
+
+  @override
+  String get inputShowPassword => 'Показать пароль';
+
+  @override
+  String get inputHidePassword => 'Скрыть пароль';
+
+  @override
+  String get inputSearchHint => 'Поиск...';
+
+  @override
+  String get inputClear => 'Очистить';
+
+  @override
+  String get inputPhoneLabel => 'Номер телефона';
+
+  @override
+  String get inputEmailLabel => 'Электронная почта';
+
+  @override
+  String get inputEmailHint => 'example@email.com';
+
+  @override
+  String get inputEmailRequired => 'Электронная почта обязательна';
+
+  @override
+  String get inputEmailInvalid => 'Введите корректный email';
+
+  @override
+  String get buttonLoading => 'Загрузка...';
+
+  @override
+  String get actionSubmit => 'Отправить';
+
+  @override
+  String get actionContinue => 'Продолжить';
+
+  @override
+  String get actionBack => 'Назад';
+
+  @override
+  String get actionNext => 'Далее';
+
+  @override
+  String get actionDone => 'Готово';
+
+  @override
+  String get actionConfirm => 'Подтвердить';
+
+  @override
+  String get actionApply => 'Применить';
+
+  @override
+  String get actionReset => 'Сбросить';
+
+  @override
+  String get actionRefresh => 'Обновить';
+
+  @override
+  String get actionShare => 'Поделиться';
+
+  @override
+  String get actionCopy => 'Копировать';
+
+  @override
+  String get actionPaste => 'Вставить';
+
+  @override
+  String get sectionGeneral => 'Общие';
+
+  @override
+  String get sectionAccount => 'Аккаунт';
+
+  @override
+  String get sectionPrivacy => 'Конфиденциальность';
+
+  @override
+  String get sectionNotifications => 'Уведомления';
+
+  @override
+  String get sectionHelp => 'Помощь и поддержка';
+
+  @override
+  String get statusOnline => 'В сети';
+
+  @override
+  String get statusOffline => 'Не в сети';
+
+  @override
+  String get statusConnecting => 'Подключение...';
+
+  @override
+  String get statusSyncing => 'Синхронизация...';
+
+  @override
+  String get homeSubtitle => 'Шаблон Flutter с дизайн-токенами';
+
+  @override
+  String get homeCounterHint => 'Нажмите кнопку для увеличения';
+
+  @override
+  String get quickActionsTitle => 'Быстрые действия';
+
+  @override
+  String get widgetDemosTitle => 'Демо виджетов';
+
+  @override
+  String get loadingData => 'Загрузка данных...';
+
+  @override
+  String get somethingWentWrong => 'Что-то пошло не так!';
+
+  @override
+  String get selectStateToPreview => 'Выберите состояние для просмотра';
+
+  @override
+  String get skeletonLoadingTitle => 'Скелетная загрузка';
+
+  @override
+  String get preferencesSection => 'Настройки';
+
+  @override
+  String get notifications => 'Уведомления';
+
+  @override
+  String get notificationsSubtitle => 'Получать push-уведомления';
+
+  @override
+  String get analytics => 'Аналитика';
+
+  @override
+  String get analyticsSubtitle => 'Помогите улучшить приложение';
+
+  @override
+  String get openSourceLicenses => 'Лицензии открытого кода';
+
+  @override
+  String get privacyPolicy => 'Политика конфиденциальности';
+
+  @override
+  String get termsOfService => 'Условия использования';
+
+  @override
+  String get madeWithFlutter => 'Сделано с ❤️ на Flutter';
+
+  @override
+  String versionInfo(String version, String build) {
+    return '$version (Сборка $build)';
+  }
+
+  @override
+  String get themeModeSystemSubtitle => 'Следовать настройкам устройства';
+
+  @override
+  String get themeModeLightSubtitle => 'Всегда использовать светлую тему';
+
+  @override
+  String get themeModeDarkSubtitle => 'Всегда использовать тёмную тему';
+
+  @override
+  String get systemLanguage => 'Системный';
+
+  @override
+  String get useDeviceLanguage => 'Использовать язык устройства';
 }

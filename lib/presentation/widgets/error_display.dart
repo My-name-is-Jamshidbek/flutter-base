@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:app_template/presentation/theme/spacing.dart';
-import 'package:app_template/presentation/theme/radii.dart';
+import 'package:app_template/presentation/theme/theme.dart';
 import 'package:app_template/l10n/gen/app_localizations.dart';
 
 /// An error display widget with retry button.
 ///
 /// Displays an error message with an icon and optional retry action.
-/// Uses semantic spacing and colors from design tokens.
+/// Uses foundations: AppIcon, AppIconSizes, AppSpacing, AppFilledButton, AppTextButton.
 class ErrorDisplay extends StatelessWidget {
   /// The error message to display.
   final String? message;
@@ -19,9 +18,6 @@ class ErrorDisplay extends StatelessWidget {
 
   /// The icon to display.
   final IconData icon;
-
-  /// The size of the icon.
-  final double iconSize;
 
   /// Custom retry button label.
   final String? retryLabel;
@@ -38,7 +34,6 @@ class ErrorDisplay extends StatelessWidget {
     this.title,
     this.onRetry,
     this.icon = Icons.error_outline,
-    this.iconSize = 64,
     this.retryLabel,
     this.secondaryActionLabel,
     this.onSecondaryAction,
@@ -66,11 +61,7 @@ class ErrorDisplay extends StatelessWidget {
                   color: colorScheme.errorContainer,
                   shape: BoxShape.circle,
                 ),
-                child: Icon(
-                  icon,
-                  size: iconSize,
-                  color: colorScheme.onErrorContainer,
-                ),
+                child: AppIcon.error(icon, size: AppIconSizes.massive),
               ),
 
               AppSpacing.verticalGapXl,
@@ -99,10 +90,11 @@ class ErrorDisplay extends StatelessWidget {
               // Retry button
               if (onRetry != null) ...[
                 AppSpacing.verticalGapXl,
-                FilledButton.icon(
+                AppFilledButton(
+                  label: retryLabel ?? l10n.retry,
                   onPressed: onRetry,
-                  icon: const Icon(Icons.refresh),
-                  label: Text(retryLabel ?? l10n.retry),
+                  icon: Icons.refresh,
+                  size: AppButtonSize.medium,
                 ),
               ],
 
@@ -110,9 +102,10 @@ class ErrorDisplay extends StatelessWidget {
               if (secondaryActionLabel != null &&
                   onSecondaryAction != null) ...[
                 AppSpacing.verticalGapSm,
-                TextButton(
+                AppTextButton(
+                  label: secondaryActionLabel!,
                   onPressed: onSecondaryAction,
-                  child: Text(secondaryActionLabel!),
+                  size: AppButtonSize.medium,
                 ),
               ],
             ],
@@ -155,7 +148,7 @@ class CompactErrorDisplay extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Icon(icon, size: 24, color: colorScheme.error),
+          AppIcon.error(icon, size: AppIconSizes.standard),
           AppSpacing.horizontalGapMd,
           Expanded(
             child: Text(
@@ -168,7 +161,7 @@ class CompactErrorDisplay extends StatelessWidget {
           if (onRetry != null)
             IconButton(
               onPressed: onRetry,
-              icon: Icon(Icons.refresh, color: colorScheme.error),
+              icon: AppIcon.error(Icons.refresh, size: AppIconSizes.standard),
               tooltip: l10n.retry,
             ),
         ],
@@ -193,7 +186,7 @@ class InlineError extends StatelessWidget {
       padding: const EdgeInsets.only(top: AppSpacing.xs),
       child: Row(
         children: [
-          Icon(Icons.error, size: 16, color: colorScheme.error),
+          AppIcon.error(Icons.error, size: AppIconSizes.sm),
           AppSpacing.horizontalGapXs,
           Expanded(
             child: Text(
