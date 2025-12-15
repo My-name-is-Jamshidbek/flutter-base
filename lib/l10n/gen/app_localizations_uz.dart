@@ -378,4 +378,57 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get useDeviceLanguage => 'Qurilma tilidan foydalanish';
+
+  @override
+  String get networkErrorTimeout =>
+      'Ulanish vaqti tugadi. Iltimos, qayta urinib ko\'ring.';
+
+  @override
+  String get networkErrorNoConnection =>
+      'Internet aloqasi yo\'q. Tarmoqni tekshiring.';
+
+  @override
+  String get networkErrorServer => 'Server xatosi. Keyinroq urinib ko\'ring.';
+
+  @override
+  String get networkErrorSessionExpired =>
+      'Sessiya muddati tugadi. Qayta kiring.';
+
+  @override
+  String get networkErrorAccessDenied => 'Sizda bu resursga ruxsat yo\'q.';
+
+  @override
+  String get networkErrorNotFound => 'So\'ralgan resurs topilmadi.';
+
+  @override
+  String networkErrorResourceNotFound(String resource) {
+    return '$resource topilmadi.';
+  }
+
+  @override
+  String get networkErrorRateLimit =>
+      'Juda ko\'p so\'rov. Kuting va qayta urinib ko\'ring.';
+
+  @override
+  String get networkErrorCancelled => 'So\'rov bekor qilindi.';
+
+  @override
+  String get networkErrorUnknown => 'Kutilmagan xato yuz berdi.';
+
+  @override
+  String get networkErrorInvalidCertificate => 'Noto\'g\'ri SSL sertifikati.';
+
+  @override
+  String get networkErrorInvalidRequest => 'Noto\'g\'ri so\'rov.';
+
+  @override
+  String get networkErrorAuthRequired => 'Autentifikatsiya talab qilinadi.';
+
+  @override
+  String get networkErrorValidationFailed => 'Tekshirish xatosi.';
+
+  @override
+  String networkRetrying(int attempt, int maxAttempts) {
+    return 'Qayta urinish... ($attempt/$maxAttempts)';
+  }
 }

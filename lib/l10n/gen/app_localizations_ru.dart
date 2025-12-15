@@ -385,4 +385,57 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get useDeviceLanguage => 'Использовать язык устройства';
+
+  @override
+  String get networkErrorTimeout =>
+      'Время ожидания истекло. Попробуйте ещё раз.';
+
+  @override
+  String get networkErrorNoConnection =>
+      'Нет подключения к интернету. Проверьте сеть.';
+
+  @override
+  String get networkErrorServer => 'Ошибка сервера. Попробуйте позже.';
+
+  @override
+  String get networkErrorSessionExpired => 'Сессия истекла. Войдите снова.';
+
+  @override
+  String get networkErrorAccessDenied => 'У вас нет доступа к этому ресурсу.';
+
+  @override
+  String get networkErrorNotFound => 'Запрашиваемый ресурс не найден.';
+
+  @override
+  String networkErrorResourceNotFound(String resource) {
+    return '$resource не найден.';
+  }
+
+  @override
+  String get networkErrorRateLimit =>
+      'Слишком много запросов. Подождите и попробуйте снова.';
+
+  @override
+  String get networkErrorCancelled => 'Запрос отменён.';
+
+  @override
+  String get networkErrorUnknown => 'Произошла непредвиденная ошибка.';
+
+  @override
+  String get networkErrorInvalidCertificate =>
+      'Недействительный SSL-сертификат.';
+
+  @override
+  String get networkErrorInvalidRequest => 'Неверный запрос.';
+
+  @override
+  String get networkErrorAuthRequired => 'Требуется авторизация.';
+
+  @override
+  String get networkErrorValidationFailed => 'Ошибка валидации.';
+
+  @override
+  String networkRetrying(int attempt, int maxAttempts) {
+    return 'Повторная попытка... ($attempt/$maxAttempts)';
+  }
 }

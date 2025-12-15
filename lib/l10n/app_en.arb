@@ -588,5 +588,96 @@
   "useDeviceLanguage": "Use device language",
   "@useDeviceLanguage": {
     "description": "System language option subtitle"
+  },
+
+  "networkErrorTimeout": "Connection timed out. Please try again.",
+  "@networkErrorTimeout": {
+    "description": "Error message when connection times out"
+  },
+
+  "networkErrorNoConnection": "No internet connection. Please check your network.",
+  "@networkErrorNoConnection": {
+    "description": "Error message when there is no internet connection"
+  },
+
+  "networkErrorServer": "Server error. Please try again later.",
+  "@networkErrorServer": {
+    "description": "Error message for server-side errors"
+  },
+
+  "networkErrorSessionExpired": "Session expired. Please log in again.",
+  "@networkErrorSessionExpired": {
+    "description": "Error message when authentication token expires"
+  },
+
+  "networkErrorAccessDenied": "You don't have permission to access this.",
+  "@networkErrorAccessDenied": {
+    "description": "Error message when access is forbidden"
+  },
+
+  "networkErrorNotFound": "The requested resource was not found.",
+  "@networkErrorNotFound": {
+    "description": "Error message when resource is not found"
+  },
+
+  "networkErrorResourceNotFound": "{resource} not found.",
+  "@networkErrorResourceNotFound": {
+    "description": "Error message when specific resource is not found",
+    "placeholders": {
+      "resource": {
+        "type": "String",
+        "example": "User"
+      }
+    }
+  },
+
+  "networkErrorRateLimit": "Too many requests. Please wait and try again.",
+  "@networkErrorRateLimit": {
+    "description": "Error message when rate limited"
+  },
+
+  "networkErrorCancelled": "Request was cancelled.",
+  "@networkErrorCancelled": {
+    "description": "Error message when request is cancelled"
+  },
+
+  "networkErrorUnknown": "An unexpected error occurred.",
+  "@networkErrorUnknown": {
+    "description": "Error message for unknown errors"
+  },
+
+  "networkErrorInvalidCertificate": "Invalid SSL certificate.",
+  "@networkErrorInvalidCertificate": {
+    "description": "Error message for invalid SSL certificate"
+  },
+
+  "networkErrorInvalidRequest": "Invalid request.",
+  "@networkErrorInvalidRequest": {
+    "description": "Error message for invalid requests"
+  },
+
+  "networkErrorAuthRequired": "Authentication required.",
+  "@networkErrorAuthRequired": {
+    "description": "Error message when authentication is required"
+  },
+
+  "networkErrorValidationFailed": "Validation failed.",
+  "@networkErrorValidationFailed": {
+    "description": "Error message when validation fails"
+  },
+
+  "networkRetrying": "Retrying... ({attempt}/{maxAttempts})",
+  "@networkRetrying": {
+    "description": "Message shown when retrying a request",
+    "placeholders": {
+      "attempt": {
+        "type": "int",
+        "example": "1"
+      },
+      "maxAttempts": {
+        "type": "int",
+        "example": "3"
+      }
+    }
   }
 }

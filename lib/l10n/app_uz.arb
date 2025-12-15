@@ -123,5 +123,21 @@
   "themeModeLightSubtitle": "Doim yorug' mavzudan foydalanish",
   "themeModeDarkSubtitle": "Doim qorong'u mavzudan foydalanish",
   "systemLanguage": "Tizim",
-  "useDeviceLanguage": "Qurilma tilidan foydalanish"
+  "useDeviceLanguage": "Qurilma tilidan foydalanish",
+
+  "networkErrorTimeout": "Ulanish vaqti tugadi. Iltimos, qayta urinib ko'ring.",
+  "networkErrorNoConnection": "Internet aloqasi yo'q. Tarmoqni tekshiring.",
+  "networkErrorServer": "Server xatosi. Keyinroq urinib ko'ring.",
+  "networkErrorSessionExpired": "Sessiya muddati tugadi. Qayta kiring.",
+  "networkErrorAccessDenied": "Sizda bu resursga ruxsat yo'q.",
+  "networkErrorNotFound": "So'ralgan resurs topilmadi.",
+  "networkErrorResourceNotFound": "{resource} topilmadi.",
+  "networkErrorRateLimit": "Juda ko'p so'rov. Kuting va qayta urinib ko'ring.",
+  "networkErrorCancelled": "So'rov bekor qilindi.",
+  "networkErrorUnknown": "Kutilmagan xato yuz berdi.",
+  "networkErrorInvalidCertificate": "Noto'g'ri SSL sertifikati.",
+  "networkErrorInvalidRequest": "Noto'g'ri so'rov.",
+  "networkErrorAuthRequired": "Autentifikatsiya talab qilinadi.",
+  "networkErrorValidationFailed": "Tekshirish xatosi.",
+  "networkRetrying": "Qayta urinish... ({attempt}/{maxAttempts})"
 }

@@ -378,4 +378,57 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get useDeviceLanguage => 'Use device language';
+
+  @override
+  String get networkErrorTimeout => 'Connection timed out. Please try again.';
+
+  @override
+  String get networkErrorNoConnection =>
+      'No internet connection. Please check your network.';
+
+  @override
+  String get networkErrorServer => 'Server error. Please try again later.';
+
+  @override
+  String get networkErrorSessionExpired =>
+      'Session expired. Please log in again.';
+
+  @override
+  String get networkErrorAccessDenied =>
+      'You don\'t have permission to access this.';
+
+  @override
+  String get networkErrorNotFound => 'The requested resource was not found.';
+
+  @override
+  String networkErrorResourceNotFound(String resource) {
+    return '$resource not found.';
+  }
+
+  @override
+  String get networkErrorRateLimit =>
+      'Too many requests. Please wait and try again.';
+
+  @override
+  String get networkErrorCancelled => 'Request was cancelled.';
+
+  @override
+  String get networkErrorUnknown => 'An unexpected error occurred.';
+
+  @override
+  String get networkErrorInvalidCertificate => 'Invalid SSL certificate.';
+
+  @override
+  String get networkErrorInvalidRequest => 'Invalid request.';
+
+  @override
+  String get networkErrorAuthRequired => 'Authentication required.';
+
+  @override
+  String get networkErrorValidationFailed => 'Validation failed.';
+
+  @override
+  String networkRetrying(int attempt, int maxAttempts) {
+    return 'Retrying... ($attempt/$maxAttempts)';
+  }
 }

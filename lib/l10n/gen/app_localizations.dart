@@ -735,6 +735,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Use device language'**
   String get useDeviceLanguage;
+
+  /// Error message when connection times out
+  ///
+  /// In en, this message translates to:
+  /// **'Connection timed out. Please try again.'**
+  String get networkErrorTimeout;
+
+  /// Error message when there is no internet connection
+  ///
+  /// In en, this message translates to:
+  /// **'No internet connection. Please check your network.'**
+  String get networkErrorNoConnection;
+
+  /// Error message for server-side errors
+  ///
+  /// In en, this message translates to:
+  /// **'Server error. Please try again later.'**
+  String get networkErrorServer;
+
+  /// Error message when authentication token expires
+  ///
+  /// In en, this message translates to:
+  /// **'Session expired. Please log in again.'**
+  String get networkErrorSessionExpired;
+
+  /// Error message when access is forbidden
+  ///
+  /// In en, this message translates to:
+  /// **'You don\'t have permission to access this.'**
+  String get networkErrorAccessDenied;
+
+  /// Error message when resource is not found
+  ///
+  /// In en, this message translates to:
+  /// **'The requested resource was not found.'**
+  String get networkErrorNotFound;
+
+  /// Error message when specific resource is not found
+  ///
+  /// In en, this message translates to:
+  /// **'{resource} not found.'**
+  String networkErrorResourceNotFound(String resource);
+
+  /// Error message when rate limited
+  ///
+  /// In en, this message translates to:
+  /// **'Too many requests. Please wait and try again.'**
+  String get networkErrorRateLimit;
+
+  /// Error message when request is cancelled
+  ///
+  /// In en, this message translates to:
+  /// **'Request was cancelled.'**
+  String get networkErrorCancelled;
+
+  /// Error message for unknown errors
+  ///
+  /// In en, this message translates to:
+  /// **'An unexpected error occurred.'**
+  String get networkErrorUnknown;
+
+  /// Error message for invalid SSL certificate
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid SSL certificate.'**
+  String get networkErrorInvalidCertificate;
+
+  /// Error message for invalid requests
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid request.'**
+  String get networkErrorInvalidRequest;
+
+  /// Error message when authentication is required
+  ///
+  /// In en, this message translates to:
+  /// **'Authentication required.'**
+  String get networkErrorAuthRequired;
+
+  /// Error message when validation fails
+  ///
+  /// In en, this message translates to:
+  /// **'Validation failed.'**
+  String get networkErrorValidationFailed;
+
+  /// Message shown when retrying a request
+  ///
+  /// In en, this message translates to:
+  /// **'Retrying... ({attempt}/{maxAttempts})'**
+  String networkRetrying(int attempt, int maxAttempts);
 }
 
 class _AppLocalizationsDelegate

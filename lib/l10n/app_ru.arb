@@ -123,5 +123,21 @@
   "themeModeLightSubtitle": "Всегда использовать светлую тему",
   "themeModeDarkSubtitle": "Всегда использовать тёмную тему",
   "systemLanguage": "Системный",
-  "useDeviceLanguage": "Использовать язык устройства"
+  "useDeviceLanguage": "Использовать язык устройства",
+
+  "networkErrorTimeout": "Время ожидания истекло. Попробуйте ещё раз.",
+  "networkErrorNoConnection": "Нет подключения к интернету. Проверьте сеть.",
+  "networkErrorServer": "Ошибка сервера. Попробуйте позже.",
+  "networkErrorSessionExpired": "Сессия истекла. Войдите снова.",
+  "networkErrorAccessDenied": "У вас нет доступа к этому ресурсу.",
+  "networkErrorNotFound": "Запрашиваемый ресурс не найден.",
+  "networkErrorResourceNotFound": "{resource} не найден.",
+  "networkErrorRateLimit": "Слишком много запросов. Подождите и попробуйте снова.",
+  "networkErrorCancelled": "Запрос отменён.",
+  "networkErrorUnknown": "Произошла непредвиденная ошибка.",
+  "networkErrorInvalidCertificate": "Недействительный SSL-сертификат.",
+  "networkErrorInvalidRequest": "Неверный запрос.",
+  "networkErrorAuthRequired": "Требуется авторизация.",
+  "networkErrorValidationFailed": "Ошибка валидации.",
+  "networkRetrying": "Повторная попытка... ({attempt}/{maxAttempts})"
 }
