@@ -1,75 +1,307 @@
 {
   "@@locale": "en",
+  
   "appTitle": "App Template",
   "@appTitle": {
     "description": "The title of the application"
   },
+
   "homeTitle": "Home",
   "@homeTitle": {
     "description": "Title for the home screen"
   },
+
   "settingsTitle": "Settings",
   "@settingsTitle": {
     "description": "Title for the settings screen"
   },
+
   "welcomeMessage": "Welcome to App Template!",
   "@welcomeMessage": {
     "description": "Welcome message shown on home screen"
   },
+
+  "authLoginTitle": "Login",
+  "@authLoginTitle": {
+    "description": "Login screen title"
+  },
+
+  "authRegisterTitle": "Register",
+  "@authRegisterTitle": {
+    "description": "Register screen title"
+  },
+
+  "authEmailHint": "Email",
+  "@authEmailHint": {
+    "description": "Email input hint"
+  },
+
+  "authPasswordHint": "Password",
+  "@authPasswordHint": {
+    "description": "Password input hint"
+  },
+
+  "authLoginButton": "Sign In",
+  "@authLoginButton": {
+    "description": "Login button text"
+  },
+
+  "authRegisterButton": "Sign Up",
+  "@authRegisterButton": {
+    "description": "Register button text"
+  },
+
+  "authForgotPassword": "Forgot password?",
+  "@authForgotPassword": {
+    "description": "Forgot password link text"
+  },
+
+  "homeWelcomeMessage": "Hello, {name}!",
+  "@homeWelcomeMessage": {
+    "description": "Personalized welcome message",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "John"
+      }
+    }
+  },
+
+  "homeItemCount": "{count, plural, =0{No items} =1{1 item} other{{count} items}}",
+  "@homeItemCount": {
+    "description": "Number of items with plural support",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+
+  "homeUnreadMessages": "{count, plural, =0{No new messages} =1{1 unread message} other{{count} unread messages}}",
+  "@homeUnreadMessages": {
+    "description": "Number of unread messages",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+
+  "commonGenderGreeting": "{gender, select, male{Mr. {name}} female{Ms. {name}} other{{name}}}",
+  "@commonGenderGreeting": {
+    "description": "Gender-aware greeting",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "example": "male"
+      },
+      "name": {
+        "type": "String",
+        "example": "Smith"
+      }
+    }
+  },
+
+  "commonDateFormat": "Last updated: {date}",
+  "@commonDateFormat": {
+    "description": "Date display format",
+    "placeholders": {
+      "date": {
+        "type": "DateTime",
+        "format": "yMMMd",
+        "example": "Jan 1, 2024"
+      }
+    }
+  },
+
+  "commonTimeAgo": "{time, select, now{Just now} minutes{{count} minutes ago} hours{{count} hours ago} days{{count} days ago} other{{time}}}",
+  "@commonTimeAgo": {
+    "description": "Relative time display",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+
   "counterLabel": "You have pushed the button this many times:",
   "@counterLabel": {
     "description": "Label for counter display"
   },
+
+  "counterValue": "{count, plural, =0{zero times} =1{once} =2{twice} other{{count} times}}",
+  "@counterValue": {
+    "description": "Counter value with plural",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+
   "appearanceSection": "Appearance",
   "@appearanceSection": {
     "description": "Appearance section title"
   },
+
   "darkMode": "Dark Mode",
   "@darkMode": {
     "description": "Dark mode setting title"
   },
+
   "darkModeSubtitle": "Use dark theme",
   "@darkModeSubtitle": {
     "description": "Dark mode setting subtitle"
   },
+
   "language": "Language",
   "@language": {
     "description": "Language setting title"
   },
+
   "selectLanguage": "Select Language",
   "@selectLanguage": {
     "description": "Select language dialog title"
   },
+
   "aboutSection": "About",
   "@aboutSection": {
     "description": "About section title"
   },
+
   "version": "Version",
   "@version": {
     "description": "Version label"
   },
+
   "licenses": "Licenses",
   "@licenses": {
     "description": "Licenses label"
   },
+
   "themeMode": "Theme Mode",
   "@themeMode": {
     "description": "Theme mode setting title"
   },
+
   "themeModeSystem": "System",
   "@themeModeSystem": {
     "description": "System theme mode"
   },
+
   "themeModeLight": "Light",
   "@themeModeLight": {
     "description": "Light theme mode"
   },
+
   "themeModeDark": "Dark",
   "@themeModeDark": {
     "description": "Dark theme mode"
   },
+
   "cancel": "Cancel",
   "@cancel": {
     "description": "Cancel button text"
+  },
+
+  "ok": "OK",
+  "@ok": {
+    "description": "OK button text"
+  },
+
+  "save": "Save",
+  "@save": {
+    "description": "Save button text"
+  },
+
+  "delete": "Delete",
+  "@delete": {
+    "description": "Delete button text"
+  },
+
+  "edit": "Edit",
+  "@edit": {
+    "description": "Edit button text"
+  },
+
+  "close": "Close",
+  "@close": {
+    "description": "Close button text"
+  },
+
+  "retry": "Retry",
+  "@retry": {
+    "description": "Retry button text"
+  },
+
+  "errorGeneric": "Something went wrong. Please try again.",
+  "@errorGeneric": {
+    "description": "Generic error message"
+  },
+
+  "errorNetwork": "Network error. Please check your connection.",
+  "@errorNetwork": {
+    "description": "Network error message"
+  },
+
+  "errorNotFound": "The requested resource was not found.",
+  "@errorNotFound": {
+    "description": "Not found error message"
+  },
+
+  "loadingMessage": "Loading...",
+  "@loadingMessage": {
+    "description": "Loading indicator text"
+  },
+
+  "emptyStateMessage": "No data available",
+  "@emptyStateMessage": {
+    "description": "Empty state message"
+  },
+
+  "searchHint": "Search...",
+  "@searchHint": {
+    "description": "Search input hint"
+  },
+
+  "noResults": "No results found",
+  "@noResults": {
+    "description": "No search results message"
+  },
+
+  "confirmDelete": "Are you sure you want to delete this?",
+  "@confirmDelete": {
+    "description": "Delete confirmation message"
+  },
+
+  "yes": "Yes",
+  "@yes": {
+    "description": "Yes button text"
+  },
+
+  "no": "No",
+  "@no": {
+    "description": "No button text"
+  },
+
+  "increment": "Increment",
+  "@increment": {
+    "description": "Increment button label"
+  },
+
+  "noItemsTitle": "No Items",
+  "@noItemsTitle": {
+    "description": "Empty state title when no items"
+  },
+
+  "noItemsMessage": "There are no items to display",
+  "@noItemsMessage": {
+    "description": "Empty state message when no items"
   }
 }

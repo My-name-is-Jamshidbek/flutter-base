@@ -68,8 +68,8 @@ abstract class AppLocalizations {
 
   final String localeName;
 
-  static AppLocalizations? of(BuildContext context) {
-    return Localizations.of<AppLocalizations>(context, AppLocalizations);
+  static AppLocalizations of(BuildContext context) {
+    return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
   }
 
   static const LocalizationsDelegate<AppLocalizations> delegate =
@@ -124,11 +124,95 @@ abstract class AppLocalizations {
   /// **'Welcome to App Template!'**
   String get welcomeMessage;
 
+  /// Login screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get authLoginTitle;
+
+  /// Register screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get authRegisterTitle;
+
+  /// Email input hint
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get authEmailHint;
+
+  /// Password input hint
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get authPasswordHint;
+
+  /// Login button text
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get authLoginButton;
+
+  /// Register button text
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Up'**
+  String get authRegisterButton;
+
+  /// Forgot password link text
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot password?'**
+  String get authForgotPassword;
+
+  /// Personalized welcome message
+  ///
+  /// In en, this message translates to:
+  /// **'Hello, {name}!'**
+  String homeWelcomeMessage(String name);
+
+  /// Number of items with plural support
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No items} =1{1 item} other{{count} items}}'**
+  String homeItemCount(int count);
+
+  /// Number of unread messages
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No new messages} =1{1 unread message} other{{count} unread messages}}'**
+  String homeUnreadMessages(int count);
+
+  /// Gender-aware greeting
+  ///
+  /// In en, this message translates to:
+  /// **'{gender, select, male{Mr. {name}} female{Ms. {name}} other{{name}}}'**
+  String commonGenderGreeting(String gender, String name);
+
+  /// Date display format
+  ///
+  /// In en, this message translates to:
+  /// **'Last updated: {date}'**
+  String commonDateFormat(DateTime date);
+
+  /// Relative time display
+  ///
+  /// In en, this message translates to:
+  /// **'{time, select, now{Just now} minutes{{count} minutes ago} hours{{count} hours ago} days{{count} days ago} other{{time}}}'**
+  String commonTimeAgo(String time, int count);
+
   /// Label for counter display
   ///
   /// In en, this message translates to:
   /// **'You have pushed the button this many times:'**
   String get counterLabel;
+
+  /// Counter value with plural
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{zero times} =1{once} =2{twice} other{{count} times}}'**
+  String counterValue(int count);
 
   /// Appearance section title
   ///
@@ -207,6 +291,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cancel'**
   String get cancel;
+
+  /// OK button text
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get ok;
+
+  /// Save button text
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// Delete button text
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// Edit button text
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// Close button text
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get close;
+
+  /// Retry button text
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
+
+  /// Generic error message
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get errorGeneric;
+
+  /// Network error message
+  ///
+  /// In en, this message translates to:
+  /// **'Network error. Please check your connection.'**
+  String get errorNetwork;
+
+  /// Not found error message
+  ///
+  /// In en, this message translates to:
+  /// **'The requested resource was not found.'**
+  String get errorNotFound;
+
+  /// Loading indicator text
+  ///
+  /// In en, this message translates to:
+  /// **'Loading...'**
+  String get loadingMessage;
+
+  /// Empty state message
+  ///
+  /// In en, this message translates to:
+  /// **'No data available'**
+  String get emptyStateMessage;
+
+  /// Search input hint
+  ///
+  /// In en, this message translates to:
+  /// **'Search...'**
+  String get searchHint;
+
+  /// No search results message
+  ///
+  /// In en, this message translates to:
+  /// **'No results found'**
+  String get noResults;
+
+  /// Delete confirmation message
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this?'**
+  String get confirmDelete;
+
+  /// Yes button text
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get yes;
+
+  /// No button text
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get no;
+
+  /// Increment button label
+  ///
+  /// In en, this message translates to:
+  /// **'Increment'**
+  String get increment;
+
+  /// Empty state title when no items
+  ///
+  /// In en, this message translates to:
+  /// **'No Items'**
+  String get noItemsTitle;
+
+  /// Empty state message when no items
+  ///
+  /// In en, this message translates to:
+  /// **'There are no items to display'**
+  String get noItemsMessage;
 }
 
 class _AppLocalizationsDelegate

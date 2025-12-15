@@ -1,21 +1,66 @@
 {
   "@@locale": "uz",
+  
   "appTitle": "Ilova Shabloni",
   "homeTitle": "Bosh sahifa",
   "settingsTitle": "Sozlamalar",
   "welcomeMessage": "Ilova Shabloniga xush kelibsiz!",
+  
+  "authLoginTitle": "Kirish",
+  "authRegisterTitle": "Ro'yxatdan o'tish",
+  "authEmailHint": "Elektron pochta",
+  "authPasswordHint": "Parol",
+  "authLoginButton": "Kirish",
+  "authRegisterButton": "Ro'yxatdan o'tish",
+  "authForgotPassword": "Parolni unutdingizmi?",
+  
+  "homeWelcomeMessage": "Salom, {name}!",
+  "homeItemCount": "{count, plural, =0{Element yo'q} =1{1 ta element} other{{count} ta element}}",
+  "homeUnreadMessages": "{count, plural, =0{Yangi xabarlar yo'q} =1{1 ta o'qilmagan xabar} other{{count} ta o'qilmagan xabar}}",
+  
+  "commonGenderGreeting": "{gender, select, male{Janob {name}} female{Xonim {name}} other{{name}}}",
+  "commonDateFormat": "Yangilangan: {date}",
+  "commonTimeAgo": "{time, select, now{Hozirgina} minutes{{count} daqiqa oldin} hours{{count} soat oldin} days{{count} kun oldin} other{{time}}}",
+  
   "counterLabel": "Siz tugmani shuncha marta bosdingiz:",
+  "counterValue": "{count, plural, =0{hech qachon} =1{bir marta} =2{ikki marta} other{{count} marta}}",
+  
   "appearanceSection": "Ko'rinish",
   "darkMode": "Qorong'u rejim",
   "darkModeSubtitle": "Qorong'u mavzudan foydalanish",
   "language": "Til",
   "selectLanguage": "Tilni tanlang",
+  
   "aboutSection": "Haqida",
   "version": "Versiya",
   "licenses": "Litsenziyalar",
+  
   "themeMode": "Mavzu rejimi",
   "themeModeSystem": "Tizim",
   "themeModeLight": "Yorug'",
   "themeModeDark": "Qorong'u",
-  "cancel": "Bekor qilish"
+  
+  "cancel": "Bekor qilish",
+  "ok": "OK",
+  "save": "Saqlash",
+  "delete": "O'chirish",
+  "edit": "Tahrirlash",
+  "close": "Yopish",
+  "retry": "Qayta urinish",
+  
+  "errorGeneric": "Xatolik yuz berdi. Qaytadan urinib ko'ring.",
+  "errorNetwork": "Tarmoq xatosi. Internetni tekshiring.",
+  "errorNotFound": "So'ralgan resurs topilmadi.",
+  
+  "loadingMessage": "Yuklanmoqda...",
+  "emptyStateMessage": "Ma'lumot mavjud emas",
+  "searchHint": "Qidirish...",
+  "noResults": "Natija topilmadi",
+  "confirmDelete": "Buni o'chirishga ishonchingiz komilmi?",
+  
+  "yes": "Ha",
+  "no": "Yo'q",
+  "increment": "Oshirish",
+  "noItemsTitle": "Elementlar yo'q",
+  "noItemsMessage": "Ko'rsatish uchun elementlar yo'q"
 }

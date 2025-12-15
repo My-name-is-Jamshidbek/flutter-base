@@ -2,12 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:app_template/core/config/app_settings.dart';
 import 'package:app_template/l10n/gen/app_localizations.dart';
+import 'package:app_template/presentation/theme/spacing.dart';
+import 'package:app_template/presentation/theme/radii.dart';
 
 /// Language option data class.
 class LanguageOption {
+  /// The language code (e.g., 'en', 'ru', 'uz').
   final String code;
+
+  /// The English name of the language.
   final String name;
+
+  /// The native name of the language.
   final String nativeName;
+
+  /// Optional flag emoji.
   final String? flag;
 
   const LanguageOption({
@@ -43,38 +52,62 @@ const supportedLanguages = [
 /// A card widget for managing localization settings.
 ///
 /// Displays current language and allows switching between
-/// supported languages via a popup dialog.
+/// supported languages.
+/// Uses semantic spacing and design tokens.
 class LocalizationManagerCard extends ConsumerWidget {
   const LocalizationManagerCard({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     final settings = ref.watch(appSettingsProvider);
     final settingsNotifier = ref.read(appSettingsProvider.notifier);
 
     return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      margin: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.lg,
+        vertical: AppSpacing.sm,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Header
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.lg,
+              AppSpacing.lg,
+              AppSpacing.lg,
+              AppSpacing.sm,
+            ),
             child: Row(
               children: [
-                Icon(Icons.language, color: theme.colorScheme.primary),
-                const SizedBox(width: 12),
+                Container(
+                  padding: const EdgeInsets.all(AppSpacing.sm),
+                  decoration: BoxDecoration(
+                    color: colorScheme.primaryContainer,
+                    borderRadius: AppRadii.borderRadiusSm,
+                  ),
+                  child: Icon(
+                    Icons.language,
+                    color: colorScheme.onPrimaryContainer,
+                    size: 20,
+                  ),
+                ),
+                AppSpacing.horizontalGapMd,
                 Text(
                   l10n.language,
                   style: theme.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ],
             ),
           ),
+
           const Divider(height: 1),
+
           // System option
           _LanguageOption(
             flag: '🌐',
@@ -83,6 +116,7 @@ class LocalizationManagerCard extends ConsumerWidget {
             isSelected: settings.locale == null,
             onTap: () => settingsNotifier.setLocale(null),
           ),
+
           // Language options
           ...supportedLanguages.map(
             (lang) => _LanguageOption(
@@ -93,7 +127,8 @@ class LocalizationManagerCard extends ConsumerWidget {
               onTap: () => settingsNotifier.setLocale(Locale(lang.code)),
             ),
           ),
-          const SizedBox(height: 8),
+
+          AppSpacing.verticalGapSm,
         ],
       ),
     );
@@ -118,28 +153,49 @@ class _LanguageOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
 
     return ListTile(
-      leading: Text(flag, style: const TextStyle(fontSize: 24)),
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.lg,
+        vertical: AppSpacing.xxs,
+      ),
+      leading: Container(
+        width: 40,
+        height: 40,
+        decoration: BoxDecoration(
+          color: isSelected
+              ? colorScheme.primaryContainer
+              : colorScheme.surfaceContainerHighest,
+          borderRadius: AppRadii.borderRadiusSm,
+        ),
+        alignment: Alignment.center,
+        child: Text(flag, style: const TextStyle(fontSize: 20)),
+      ),
       title: Text(
         title,
-        style: TextStyle(
-          color: isSelected ? theme.colorScheme.primary : null,
-          fontWeight: isSelected ? FontWeight.w600 : null,
+        style: theme.textTheme.bodyLarge?.copyWith(
+          color: isSelected ? colorScheme.primary : colorScheme.onSurface,
+          fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
         ),
       ),
-      subtitle: Text(subtitle),
+      subtitle: Text(
+        subtitle,
+        style: theme.textTheme.bodySmall?.copyWith(
+          color: colorScheme.onSurfaceVariant,
+        ),
+      ),
       trailing: isSelected
-          ? Icon(Icons.check_circle, color: theme.colorScheme.primary)
-          : const Icon(Icons.circle_outlined),
+          ? Icon(Icons.check_circle, color: colorScheme.primary)
+          : Icon(Icons.circle_outlined, color: colorScheme.outline),
       onTap: onTap,
     );
   }
 }
 
-/// Shows a dialog for selecting language.
+/// Shows a bottom sheet dialog for selecting language.
 Future<Locale?> showLanguageDialog(BuildContext context) {
-  final l10n = AppLocalizations.of(context)!;
+  final l10n = AppLocalizations.of(context);
   final theme = Theme.of(context);
 
   return showModalBottomSheet<Locale?>(
@@ -155,7 +211,10 @@ Future<Locale?> showLanguageDialog(BuildContext context) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.xxl,
+              vertical: AppSpacing.sm,
+            ),
             child: Text(
               l10n.selectLanguage,
               style: theme.textTheme.headlineSmall,
@@ -165,24 +224,23 @@ Future<Locale?> showLanguageDialog(BuildContext context) {
           Expanded(
             child: ListView(
               controller: scrollController,
+              padding: EdgeInsets.zero,
               children: [
-                ListTile(
-                  leading: const Text('🌐', style: TextStyle(fontSize: 24)),
-                  title: const Text('System'),
-                  subtitle: const Text('Use device language'),
+                _LanguageDialogOption(
+                  flag: '🌐',
+                  title: 'System',
+                  subtitle: 'Use device language',
                   onTap: () => Navigator.pop(context, null),
                 ),
                 ...supportedLanguages.map(
-                  (lang) => ListTile(
-                    leading: Text(
-                      lang.flag ?? '🌍',
-                      style: const TextStyle(fontSize: 24),
-                    ),
-                    title: Text(lang.nativeName),
-                    subtitle: Text(lang.name),
+                  (lang) => _LanguageDialogOption(
+                    flag: lang.flag ?? '🌍',
+                    title: lang.nativeName,
+                    subtitle: lang.name,
                     onTap: () => Navigator.pop(context, Locale(lang.code)),
                   ),
                 ),
+                AppSpacing.verticalGapLg,
               ],
             ),
           ),
@@ -192,48 +250,89 @@ Future<Locale?> showLanguageDialog(BuildContext context) {
   );
 }
 
+class _LanguageDialogOption extends StatelessWidget {
+  final String flag;
+  final String title;
+  final String subtitle;
+  final VoidCallback onTap;
+
+  const _LanguageDialogOption({
+    required this.flag,
+    required this.title,
+    required this.subtitle,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
+    return ListTile(
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.xxl,
+        vertical: AppSpacing.xxs,
+      ),
+      leading: Container(
+        width: 40,
+        height: 40,
+        decoration: BoxDecoration(
+          color: colorScheme.surfaceContainerHighest,
+          borderRadius: AppRadii.borderRadiusSm,
+        ),
+        alignment: Alignment.center,
+        child: Text(flag, style: const TextStyle(fontSize: 20)),
+      ),
+      title: Text(title),
+      subtitle: Text(
+        subtitle,
+        style: theme.textTheme.bodySmall?.copyWith(
+          color: colorScheme.onSurfaceVariant,
+        ),
+      ),
+      onTap: onTap,
+    );
+  }
+}
+
 /// A compact language switcher tile for use in lists.
 class LanguageSwitcherTile extends ConsumerWidget {
   const LanguageSwitcherTile({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     final settings = ref.watch(appSettingsProvider);
     final settingsNotifier = ref.read(appSettingsProvider.notifier);
 
     return ListTile(
-      leading: Text(
-        _getCurrentLanguageFlag(settings.locale),
-        style: const TextStyle(fontSize: 24),
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.lg,
+        vertical: AppSpacing.xs,
+      ),
+      leading: Container(
+        width: 40,
+        height: 40,
+        decoration: BoxDecoration(
+          color: colorScheme.surfaceContainerHighest,
+          borderRadius: AppRadii.borderRadiusSm,
+        ),
+        alignment: Alignment.center,
+        child: Text(
+          getCurrentLanguageFlag(settings.locale),
+          style: const TextStyle(fontSize: 20),
+        ),
       ),
       title: Text(l10n.language),
-      subtitle: Text(_getCurrentLanguageName(settings.locale)),
+      subtitle: Text(getCurrentLanguageName(settings.locale)),
       trailing: const Icon(Icons.chevron_right),
       onTap: () async {
         final result = await showLanguageDialog(context);
-        // null means system, so we need to differentiate from "cancelled"
         settingsNotifier.setLocale(result);
       },
     );
-  }
-
-  String _getCurrentLanguageName(Locale? locale) {
-    if (locale == null) return 'System';
-    final lang = supportedLanguages.firstWhere(
-      (l) => l.code == locale.languageCode,
-      orElse: () => supportedLanguages.first,
-    );
-    return lang.nativeName;
-  }
-
-  String _getCurrentLanguageFlag(Locale? locale) {
-    if (locale == null) return '🌐';
-    final lang = supportedLanguages.firstWhere(
-      (l) => l.code == locale.languageCode,
-      orElse: () => supportedLanguages.first,
-    );
-    return lang.flag ?? '🌍';
   }
 }
 
